@@ -1,0 +1,2 @@
+1. We have updated authors in Revision History in Software Development Document template - From "Lê Trọng Anh Tú" to all members in our team
+2. Update Risk management
