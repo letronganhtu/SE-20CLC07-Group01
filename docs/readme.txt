@@ -7,4 +7,9 @@
     - Meeting 2 (Weekly - 1): Friday, June 3rd, 2022 at 10:00 P.M on Slack
     - Meeting 3 (Review): Saturday, June 4th, 2022 at 2:00 P.M on Slack
   1.3. PA2
-    - Meeting 1 (Planning):
+    - Meeting 1 (Planning): Monday, June 6th, 2022 at 2:00 P.M on Slack
+    - Meeting 2 (Weekly - 1): Thursday, June 9th, 2022 at 3:15 P.M, Offline in I91
+    - Meeting 3 (Weekly - 2): Wednesday, June 15th, 2022 at 2:30 P.M on Messenger
+    - Meeting 4 (Review): Sunday, June 19th, 2022 at 2:00 P.M on Slack
+  1.4. PA3
+    - Meeting 1 (Planning): 
