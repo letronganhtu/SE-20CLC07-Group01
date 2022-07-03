@@ -1,0 +1,109 @@
+----Example of a post----
+ngthiennhan2002, June 17 2022 7:00:00
+Cơm chiên dương châu (MÓN CƠM)
+Thumbnail: <Com_chien_duong_chau.png>
+Nguyên liệu:
+Cà rốt (RAU CỦ QUẢ): 100 gram
+Cơm (CƠM): 2 chén
+Trứng gà (TRỨNG): 2 quả
+This is one of the most popular dishes in the world. With Cơm chiên dương châu, you can enjoy your meal so much
+Bước 1: Đập 2 quả trứng gà vào tô, tách lòng đỏ <Image1.png>
+Bước 2: Đổ lòng đỏ vào cơm, trộn đều
+<Image2.png>
+Bước 3: Cho dầu vào chảo không dính, đun đến khi dầu nóng
+...
+Bước n:...
+Thành phần dinh dưỡng:
+Calories: 300 kcal
+Đạm: 10g
+Carbohydrates: 20g
+Chất béo: 10g
+Natri: 50mg
+
+--> Table "Post":
+{- startUser: ngthiennhan2002
+- postedTime: June 17 2022 7:00:00
+- thumbnail: com_chien_duong_chau.png
+- additionalNote: "This is one of the most popular dishes in the world. With Cơm chiên dương châu, you can enjoy your meal so much"
+- isAvailable: 1}
+
+--------------------------
+--> Table "Steps to cook":
+{- startUser: ngthiennhan2002
+- postedTime: June 17 2022 7:00:00
+- stepOrder: 1
+- detailedStep: "Đập 2 quả trứng gà vào tô, tách lòng đỏ"
+- postedImage: Image1.png}
+
+{- startUser: ngthiennhan2002
+- postedTime: June 17 2022 7:00:00
+- stepOrder: 2
+- detailedStep: "Đổ lòng đỏ vào cơm, trộn đều"
+- postedImage: Image2.png}
+
+{- startUser: ngthiennhan2002
+- postedTime: June 17 2022 7:00:00
+- stepOrder: 3
+- detailedStep: "Đổ dầu vào chảo không dính, đun đến khi dầu nóng"
+- postedImage: NULL}
+
+--------------------------
+--> Table "Recipe":
+{- startUser: ngthiennhan2002
+- postedTime: June 17 2022 7:00:00
+- dishName: "Cơm chiên dương châu"
+- dishType: "món cơm"}
+
+--------------------------
+--> Table "Food":
+{- foodName: "Cơm chiên dương châu"
+- ingredients: "Cà rốt"
+- ingredientType: "RAU CỦ QUẢ"
+- unit: gram
+- amount: 200}
+
+{- foodName: "Cơm chiên dương châu"
+- ingredients: "Cơm"
+- ingredientType: "CƠM"
+- unit: chén
+- amount: 2}
+
+{- foodName: "Cơm chiên dương châu"
+- ingredients: "Trứng gà"
+- ingredientType: "TRỨNG"
+- unit: quả
+- amount: 2}
+
+--------------------------
+--> Table "Average Nutrition in Each Food":
+{ - ingredientName: "Cơm chiên dương châu"
+- nutritionType: calories
+- unit: kcal
+- amount: 300}
+
+{ - ingredientName: "Cơm chiên dương châu"
+- nutritionType: Đạm
+- unit: g
+- amount: 10}
+
+{ - ingredientName: "Cơm chiên dương châu"
+- nutritionType: Carbohydrates
+- unit: g
+- amount: 20}
+
+{ - ingredientName: "Cơm chiên dương châu"
+- nutritionType: Chất béo
+- unit: g
+- amount: 10}
+
+{ - ingredientName: "Cơm chiên dương châu"
+- nutritionType: Natri
+- unit: mg
+- amount: 50}
+
+
+
+
+
+
+
