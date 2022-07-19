@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Foodaholic</title>
+        <!--Add Google Fonts-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">
+
+        <!--Add title icon-->
+        <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/5141/5141534.png">
+    
+        <!--Add style file-->
+        <link rel="stylesheet" href="/Styles/mainpage.css">
+        <link rel="stylesheet" href="/Styles/navigation-bar.css">
+        <link rel="stylesheet" href="/Styles/loader.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <!--Add Javascript files-->
+        <script type="text/javascript" src="/Scripts/functions.js"></script>
+        <script type="text/javascript" src="/Scripts/mainpage.js"></script>
+        
+    </head>
+
+    <body>
+        <script>
+            hidePreloader();
+            var checkbox1_ticked = true;
+            var checkbox2_ticked = false;
+        </script>
+
+        <!--Add loading effect-->
+        <div id="loader-wrapper" class="loader-wrapper">
+            <span class="loader">
+                <span class="loader-inner">
+                </span>
+            </span>
+            <div class="loading-text">
+                <h2 class="loading">Loading...</h2>
+            </div>
+        </div>
+
+
+        <ul class="navigation-bar">
+            <li><a class="fa fa-home" href="/templates/mainpage.html" style="font-size:23px"></a></li>
+            <li><a class="home-button" href="/templates/mainpage.html"> Home</a></li>
+            <div class="about-us-div">
+                <li><a class="about-us" href="#about">About Us</a></li>
+                <span class="about-us-text">Foodaholic is created by Group 1 including
+                    <ul>
+                        <li>Le Trong Anh Tu: 20127091</li>
+                        <li>Nguyen Thien Nhan: 20127265</li>
+                        <li>Le Dang Khoa: 20127533</li>
+                        <li>Phan Tuan Khai: 20127524</li>
+                    </ul>
+                </span>
+            </div>
+            <li><a class="help" href="">Help</a></li>
+            <div class="profile-dropdown">
+                <button class="dropbtn">
+                    <div class="avatar-img-div">
+                        <img src="" id="avatar-img" class="avatar-img" alt="Avatar">
+                    </div>
+                    <div class="show-username-div">
+                        <h3 id="show-username" class="show-username"></h3>
+                    </div>
+                </button>
+                <div class="dropdown-content">
+                    <a id="profile-name" class="profile-name"></a>
+                    <a href="/templates/profile.html" id="edit-profile" style="border-top: 1px solid white"><i class="fa fa-edit"></i> Edit Information</a>
+                    <a href="#" id="change-username"><i class="fa fa-user"></i> Change Username</a>
+                    <a href="#" id="change-password"><i class="fa fa-key"></i> Change Password</a>
+                    <a href="#" id="like-list"><i class="fa fa-thumbs-up"></i> Like List</a>
+                    <a href="#" id="comment-list"><i class="fa fa-comment"></i> Comment List</a>
+                    <a href="#" id="my-recipes"><i class="fa fa-book"></i> My Recipes</a>
+                    <a href="javascript:signOut()" style="border-top: 1px solid white"><i class="fa fa-sign-out"></i> Sign Out</a>
+                </div>
+            </div>
+        </ul>
+
+        <div id="title-div" class="title-div">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Chef_icon.svg/1200px-Chef_icon.svg.png" id="foodaholic-cook" class="foodaholic-cook">
+            <h1 id="title" class="title">Foodaholic</h1>
+            <div class="search-div" id="search-div">
+                <input type="text" id="search-bar" class="search-bar" placeholder="Search by dish name..." maxlength="200">
+                <button type="submit" id="search-button" class="search-button"><i class="fa fa-search"></i></button>
+                <div id="search-by-div" class="search-by-div">
+                    <label id="search-by-label" class="search-by-label">Search by: </label>
+                    <button id="search-by-dish-name-button" class="search-by-dish-name-checkbox" value="" onclick="chooseCheckbox1()" checked></button>
+                    <label id="dish-name-checkbox-label" class="dish-name-checkbox-label">Dish name</label>
+                    <button id="search-by-ingredients-button" class="search-by-ingredients-checkbox" value="" onclick="chooseCheckbox2()"></button>
+                    <label id="ingredients-checkbox-label" class="ingredients-checkbox-label">Ingredients</label>
+                </div>
+                <button id="open-post-button" class="open-post-button" onclick="location.href='/templates/post-recipe.html'"><i class="fa fa-book"></i><i id="fa-fa-plus" class="fa fa-plus"></i> Post something here</button>
+            </div>
+        </div>
+
+        <div id="newest-dishes-div" class="newest-dished-div">
+            <div id="newest-dishes-title-div" class="newest-dishes-title-div">
+                <h2 id="newest-dishes-title" class="newest-dishes-div"><u>Newest Dishes</u></h2>
+            </div>
+
+            <div class="gallery">
+                <img id="post-image-1" src="https://previews.123rf.com/images/lkeskinen/lkeskinen1610/lkeskinen161000246/63375277-no-information-rubber-stamp-on-white-print-impress-overprint-.jpg" class="post-image">
+                <small id="recipe-name-1" class="recipe-name"><i>XXXXXXXX</i></small>
+                <div class="postingUser">
+                    <div id="post-avatar-icon-div-1" class="post-avatar-icon-div">
+                        <img src="" id="post-avatar-icon-1" class="post-avatar-icon">
+                    </div>
+                    <div id="post-username-1" class="post-username">XXXXXXXX</div>
+                </div>
+                <button id="view-post-button-1" class="view-post-button" onclick="viewDetailPost(this.id)">View</button>
+            </div>
+            
+            <div class="gallery">
+                <img id="post-image-2" src="https://previews.123rf.com/images/lkeskinen/lkeskinen1610/lkeskinen161000246/63375277-no-information-rubber-stamp-on-white-print-impress-overprint-.jpg"  class="post-image">
+                <small id="recipe-name-2" class="recipe-name"><i>XXXXXXXX</i></small>
+                <div class="postingUser">
+                    <div id="post-avatar-icon-div-2" class="post-avatar-icon-div">
+                        <img src="" id="post-avatar-icon-2" class="post-avatar-icon">
+                    </div>
+                    <div id="post-username-2" class="post-username">XXXXXXXX</div>
+                </div>
+                <button id="view-post-button-2" class="view-post-button" onclick="viewDetailPost(this.id)">View</button>
+            </div>
+
+            <div class="gallery">
+                <img id="post-image-3" src="https://previews.123rf.com/images/lkeskinen/lkeskinen1610/lkeskinen161000246/63375277-no-information-rubber-stamp-on-white-print-impress-overprint-.jpg" class="post-image">
+                <small id="recipe-name-3" class="recipe-name"><i>XXXXXXXX</i></small>
+                <div class="postingUser">
+                    <div id="post-avatar-icon-div-3" class="post-avatar-icon-div">
+                        <img src="" id="post-avatar-icon-3" class="post-avatar-icon">
+                    </div>
+                    <div id="post-username-3" class="post-username">XXXXXXXX</div>
+                </div>
+                <button id="view-post-button-3" class="view-post-button" onclick="viewDetailPost(this.id)">View</button>
+            </div>
+            
+            <div class="gallery">
+                <img id="post-image-4" src="https://previews.123rf.com/images/lkeskinen/lkeskinen1610/lkeskinen161000246/63375277-no-information-rubber-stamp-on-white-print-impress-overprint-.jpg" class="post-image">
+                <small id="recipe-name-4" class="recipe-name"><i>XXXXXXXX</i></small>
+                <div class="postingUser">
+                    <div id="post-avatar-icon-div-4" class="post-avatar-icon-div">
+                        <img src="" id="post-avatar-icon-4" class="post-avatar-icon">
+                    </div>
+                    <div id="post-username-4" class="post-username">XXXXXXXX</div>
+                </div>
+                <button id="view-post-button-4" class="view-post-button" onclick="viewDetailPost(this.id)">View</button>
+            </div>
+
+            
+            <button id="see-more-button" class="see-more-button" onclick="seeMoreNewestDishes(countDisplayedNewestDishes)">See more dishes...</button>
+        </div>
+
+
+
+        <script>
+            username = sessionStorage.getItem("username");
+            avatar = sessionStorage.getItem("avatar");
+            cover = sessionStorage.getItem("cover");
+            anonymousAvatar = "data:image/png;base64," + sessionStorage.getItem("anonymousAvatar");
+            
+            for (var i = 0; i < 4; i++) {
+                var idAvatar = "post-avatar-icon-" + String(i + 1);
+                document.getElementById(idAvatar).src = anonymousAvatar;
+            }
+
+            show_username = username;
+            if (username.length > 15) {
+                show_username = show_username.substring(0, 16) + "...";
+            }
+            document.getElementById("profile-name").innerHTML = show_username;
+            document.getElementById("show-username").innerHTML = show_username;
+            //var img = document.createElement("img");
+            //img.src = "data:image/;base64," + avatar;
+            //console.log(img.src);
+            var avatar_string = "data:image/;base64," + avatar;
+            document.getElementById("avatar-img").src = avatar_string;
+            //var cover_string = "data:image/;base64," + cover;
+            //document.getElementById("cover-img").src = cover_string;
+    
+            readNewestPosts(4);
+            checkGuest();
+            if (username === "GUEST") {
+                document.getElementById("open-post-button").disabled = true;
+        document.getElementById("open-post-button").style.cursor = "no-drop";
+            }
+
+            function chooseCheckbox1() {
+                document.getElementById("search-by-dish-name-button").style.backgroundColor = "rgb(37, 189, 37)";
+                document.getElementById("search-by-ingredients-button").style.backgroundColor = "transparent";
+                document.getElementById("search-bar").placeholder = 'Search by dish name...';
+                checkbox1_ticked = true;
+                checkbox2_ticked = false;
+            }
+            function chooseCheckbox2() {
+                document.getElementById("search-by-ingredients-button").style.backgroundColor = "rgb(37, 189, 37)";
+                document.getElementById("search-by-dish-name-button").style.backgroundColor = "transparent";
+                document.getElementById("search-bar").placeholder = 'Search by ingredients...';
+                checkbox1_ticked = false;
+                checkbox2_ticked = true;
+            }
+        </script>
+
+    </body>
+</html>
