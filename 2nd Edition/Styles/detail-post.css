@@ -1,0 +1,333 @@
+/* Add styles to sign up form */
+b.asterisk {
+    color: red;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+form.post-recipe-form, form.upload-thumbnail-form {
+    border: 3px solid #f1f1f1;
+    border-radius: 20px;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    margin-top: 5px;
+}
+#back-to-homepage-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.container {
+    padding: 16px;
+}
+h1.recipe-name {
+    font-family: "Arial";
+    color: purple;
+    text-align: center;
+    font-size: 40px;
+}
+
+/* Add styles to posting user bar */
+div.posting-user-div {
+    width: 100%;
+    height: 75px;
+}
+div.posting-user-avatar-div {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+img.posting-user-avatar-img {
+    width: 100%; 
+    height: 100%; 
+    border-radius: 50%;
+    border: none;
+}
+div.posting-user-username-div {
+    width: 70%;
+    height: 30px;
+    margin-left: 90px;
+    margin-top: -60px;
+}
+div.favorite-div {
+    width: 50px;
+    height: 50px;
+    margin-left: 660px;
+    margin-top: -37px;
+    font-size: 40px;
+    text-align: center;
+    border: none;
+}
+#favorite-button {
+    color: white;
+    cursor: pointer;
+    text-shadow: 0 0 6px #000;
+    transition: .25s ease;
+}
+div.setting-div {
+    width: 40px;
+    height: 50px;
+    margin-left: 705px;
+    margin-top: -50px;
+    font-size: 40px;
+
+    text-align: center;
+    cursor: pointer;
+    border: none;
+}
+
+/* Add styles to short description bar */
+div.short-description-div {
+    width: 90%;
+    height: 60px;
+    background-color: rgb(0, 0, 0, 0.08);
+    margin-top: 20px;
+    margin-left: 40px;
+}
+div.short-description-text-div {
+    width: 80%;
+    height: 100%;
+    z-index: 101;
+    padding: 10px 10px;
+}
+div.double-quotes-right-div {
+    font-size: 50px;
+    background-color: transparent;
+    color: orange;
+    text-align: right;
+    margin-top: -79px;
+    z-index: 100;
+}
+
+/* Add styles to thumbnail */
+div.thumbnail-div {
+    width: 90%;
+    height: 400px;
+    background-color: grey;
+    margin-left: 40px;
+}
+
+/* Add styles to time div */
+div.time-div {
+    width: 90%;
+    height: 150px;
+    background-color: rgb(255, 255, 0, 0.5);
+    margin-left: 40px;
+}
+div.preparation-time-div, div.cooking-time-div {
+    width: 30%;
+    height: 100%;
+    text-align: center;
+}
+div.clock-div {
+    width: 13.5%;
+    height: 50%;
+    margin-left: 298px;
+    margin-top: -120px;
+    text-align: center;
+}
+img.clock-img {
+    width: 50px;
+    height: 50px;
+}
+div.preparation-time-div {
+    margin-left: 60px;
+}
+div.prep-label-div, div.cooking-label-div {
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    padding-top: 35px;
+}
+div.cooking-time-div {
+    margin-left: 420px;
+    margin-top: -105px;
+}
+div.prep-button-div, div.cooking-button-div {
+    width: 100%;
+    height: 54px;
+}
+div.time-div input[type='submit'] {
+    width: 100%;
+    height: 35px;
+    font-size: 18px;
+    background-color: white;
+    border: 1px solid grey;
+}
+
+/* Add styles to ingredients div */
+div.ingredients-div {
+    width: 90%;
+    height: auto;
+    margin-left: 40px;
+    background-color: rgb(0, 0, 0, 0.08);
+}
+div.ingredients-label {
+    font-size: 20px;
+    margin-left: 20px;
+    padding-top: 15px;
+}
+label.ingredient {
+    font-size: 18px;
+    margin-left: 100px;
+}
+div.indent-div {
+    height: 15px;
+}
+
+/* Add styles to steps div */
+div.steps-div {
+    width: 90%;
+    height: auto;
+    margin-left: 40px;
+    background-color: rgb(202, 247, 250);
+}
+div.steps-label {
+    font-size: 20px;
+    margin-left: 20px;
+    padding-top: 15px;
+}
+label.step {
+    font-size: 18px;
+    margin-left: 80px;
+    display: flex;
+    padding-right: 60px;
+}
+
+/* Add styles to nutritions div */
+div.nutritions-div {
+    width: 90%;
+    height: auto;
+    margin-left: 40px;
+    background-color: rgb(0, 0, 0, 0.08);
+}
+div.nutritions-label {
+    font-size: 20px;
+    margin-left: 20px;
+    padding-top: 15px;
+}
+label.nutrition {
+    font-size: 18px;
+    margin-left: 100px;
+    display: flex;
+}
+
+/* Add styles to additional images div */
+div.additional-images-div {
+    width: 90%;
+    height: auto;
+    margin-left: 40px;
+    background-color: rgb(0, 0, 0, 0.08);
+}
+div.additional-images-label {
+    font-size: 20px;
+    margin-left: 20px;
+    padding-top: 15px;
+}
+img.additional-image {
+    width: 300px;
+    height: 200px;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+/* Add styles to like div */
+div.like-div {
+    width: 86%;
+    height: 50px;
+    background-color: white;
+    border: 1px solid grey;
+    margin-left: 40px;
+    padding-top: 10px;
+    padding-left: 30px;
+}
+#love-button, #haha-button, #angry-button {
+    width: auto;
+    height: 35px;
+    border-radius: 15px;
+    border: 2px solid white;
+    background-color: rgb(0, 0, 0, 0.08);
+    cursor: pointer;
+    transition: .5s ease;
+}
+#love-button:hover, #haha-button:hover, #angry-button:hover {
+    background-color: rgb(255, 165, 0, 0.3);
+    border: 2px solid rgb(255, 165, 0, 0.8);
+}
+#haha-img {
+    width: 15px;
+    height: 12px;
+}
+#angry-img {
+    width: 12px;
+    height: 12px;
+}
+
+/* Add styles to comment div */
+div.comment-div {
+    width: 90%;
+    height: auto;
+    margin-left: 40px;
+    background-color: rgb(0, 0, 0, 0.08);
+}
+div.comment-label {
+    font-size: 20px;
+    margin-left: 20px;
+    padding-top: 20px;
+}
+#alert-no-comments {
+    font-size: 18px;
+    margin-left: 65px;
+}
+div.user-comment {
+    width: 81%;
+    height: auto;
+    margin-left: 65px;
+    margin-bottom: 10px;
+}
+img.avatar-user-comment {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+div.username-comment {
+    margin-left: 45px;
+    margin-top: -30px;
+}
+div.comment {
+    width: 92%;
+    height: auto;
+    margin-left: 45px;
+    margin-top: 5px;
+    margin-right: 5px;
+    word-wrap: break-word; /* Wrap text in a div */
+}
+
+textarea.comment-textarea {
+    width: 80%;
+    height: 120px;
+    resize: none;
+    margin-bottom: 10px;
+    margin-left: 65px;
+    font-size: 17px;
+    font-family: "Arial";
+    border: 1px solid orange;
+}
+button.comment-button {
+    background-color: rgb(255, 165, 0);
+    padding: 5px 15px;
+    font-size: 17px;
+    font-family: "Arial";
+    border: none;
+    color: white;
+    margin-left: 65px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: .2s ease;
+}
+button.comment-button:hover {
+    background-color: rgb(255, 165, 0, 0.8);
+}
