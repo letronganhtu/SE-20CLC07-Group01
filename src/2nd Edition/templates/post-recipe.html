@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Foodaholic</title>
+        <!--Add Google Fonts-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">
+
+        <!--Add title icon-->
+        <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/5141/5141534.png">
+    
+        <!--Add style file-->
+        <link rel="stylesheet" href="/Styles/post-recipe.css">
+        <link rel="stylesheet" href="/Styles/loader.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <!--Add Javascript files-->
+        <script type="text/javascript" src="/Scripts/functions.js"></script>
+        <script type="text/javascript" src="/Scripts/post-recipe.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    </head>
+
+    <body>
+        <script>
+            hidePreloader();
+            var checkbox1_ticked = true;
+            var checkbox2_ticked = false;
+        </script>
+
+        <!--Add loading effect-->
+        <div id="loader-wrapper" class="loader-wrapper">
+            <span class="loader">
+                <span class="loader-inner">
+                </span>
+            </span>
+            <div class="loading-text">
+                <h2 class="loading">Loading...</h2>
+            </div>
+        </div>
+        
+        <form name="post-recipe-form" id="post-recipe-form" class="post-recipe-form" onsubmit="return false;">
+            <div class="container">
+                <div id="back-to-homepage" class="back-to-homepage">
+                    <button id="back-to-homepage-button" onclick="location.href='/templates/mainpage.html'"><i class="fa fa-arrow-left" style="font-size:30px;"></i></button>
+                </div>
+                <div class="post-title-div">
+                    <h1 class="post-title" id="post-title">Post recipe</h1>
+                </div>
+
+                <!--Recipe name-->
+                <div class="recipe-name-div">
+                    <div class="recipe-name-img-div">
+                        <img id="recipe-name-img" class="recipe-name-img" src="https://cdn-icons-png.flaticon.com/512/1046/1046874.png">
+                    </div>
+                    <div class="recipe-name-title-div">
+                        <label id="recipe-name" class="recipe-name" contenteditable="true" onclick="deleteRecipeName()">Enter Recipe Name...</label><b class="asterisk" style="color:red;"> *</b><br>
+                    </div>
+                </div>
+                
+                <!--Short description-->
+                <div class="short-description-div">
+                    <div class="short-description-img-div">
+                        <img src="https://cdn-icons-png.flaticon.com/512/259/259500.png" id="short-description-img" class="short-description-img">
+                    </div>
+                    <div class="short-description-title-div">
+                        <label id="short-description-title" class="short-description-title">Short Description</label><br>
+                    </div>
+                    <div class="textbox-short-description">
+                        <textarea id="short-description" class="short-description" placeholder="Share everything about your dish (such as who inspires you, who do you cook this for,...)"  maxlength="500"></textarea><br>
+                    </div>
+                </div>
+                
+                <!--Ingredients-->
+                <div class="ingredients-img-div">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1237/1237072.png" id="ingredients-img" class="ingredients-img">
+                </div>
+                <div class="ingredients-title-div">
+                    <label id="ingredients-title" class="ingredients-title">Ingredients</label><br>
+                </div>
+
+                <button class="delete-ingredient-button" onclick="deleteLatestIngredient()">-</button>
+
+                <div id="ingredient-div-1" class="ingredient-div">
+                    <label id="order-1" class="order-label">Ingredient 1:</label><b class="asterisk" style="color:red;"> *</b><br>
+                    <textarea id="ingredient1" class="ingredient" placeholder="Ingredient name (Ex: 0.5kg chicken)"  maxlength="500"></textarea><br><br>
+                </div>
+
+                <div id="ingredient-div-2" class="ingredient-div">
+                    <label id="order-2" class="order-label">Ingredient 2:</label><br>
+                    <textarea id="ingredient2" class="ingredient" placeholder="Ingredient name (Ex: 0.5kg chicken)"  maxlength="500"></textarea><br>
+                </div>
+
+                <div id="ingredient-div-3" class="ingredient-div">
+                    <label id="order-3" class="order-label">Ingredient 3:</label><br>
+                    <textarea id="ingredient3" class="ingredient" placeholder="Ingredient name (Ex: 0.5kg chicken)"  maxlength="500"></textarea><br>
+                </div>
+
+                <div id="ingredient-div-4" class="ingredient-div">
+                    <label id="order-4" class="order-label">Ingredient 4:</label><br>
+                    <textarea id="ingredient4" class="ingredient" placeholder="Ingredient name (Ex: 0.5kg chicken)"  maxlength="500"></textarea><br>
+                </div>
+
+                <div id="ingredient-div-5" class="ingredient-div">
+                    <label id="order-5" class="order-label">Ingredient 5:</label><br>
+                    <textarea id="ingredient5" class="ingredient" placeholder="Ingredient name (Ex: 0.5kg chicken)"  maxlength="500"></textarea><br>
+                </div>
+
+                <div id="ingredient-div-6" class="ingredient-div">
+                    <label id="order-6" class="order-label">Ingredient 6:</label><br>
+                    <textarea id="ingredient6" class="ingredient" placeholder="Ingredient name (Ex: 0.5kg chicken)"  maxlength="500"></textarea><br>
+                </div>
+
+                <div id="ingredient-div-7" class="ingredient-div">
+                    <label id="order-7" class="order-label">Ingredient 7:</label><br>
+                    <textarea id="ingredient7" class="ingredient" placeholder="Ingredient name (Ex: 0.5kg chicken)"  maxlength="500"></textarea><br>
+                </div>
+
+                <div id="ingredient-div-8" class="ingredient-div">
+                    <label id="order-8" class="order-label">Ingredient 8:</label><br>
+                    <textarea id="ingredient8" class="ingredient" placeholder="Ingredient name (Ex: 0.5kg chicken)"  maxlength="500"></textarea><br>
+                </div>
+
+                <div id="ingredient-div-9" class="ingredient-div">
+                    <label id="order-9" class="order-label">Ingredient 9:</label><br>
+                    <textarea id="ingredient9" class="ingredient" placeholder="Ingredient name (Ex: 0.5kg chicken)"  maxlength="500"></textarea><br>
+                </div>
+
+                <div id="ingredient-div-10" class="ingredient-div">
+                    <label id="order-10" class="order-label">Ingredient 10:</label><br>
+                    <textarea id="ingredient10" class="ingredient" placeholder="Ingredient name (Ex: 0.5kg chicken)"  maxlength="500"></textarea><br>
+                </div>
+
+                <div id="ingredient-div-11" class="ingredient-div">
+                    <label id="order-11" class="order-label">Ingredient 11:</label><br>
+                    <textarea id="ingredient11" class="ingredient" placeholder="Ingredient name (Ex: 0.5kg chicken)"  maxlength="500"></textarea><br>
+                </div>
+
+                <div id="ingredient-div-12" class="ingredient-div">
+                    <label id="order-12" class="order-label">Ingredient 12:</label><br>
+                    <textarea id="ingredient12" class="ingredient" placeholder="Ingredient name (Ex: 0.5kg chicken)"  maxlength="500"></textarea><br>
+                </div>
+
+                <div id="ingredient-div-13" class="ingredient-div">
+                    <label id="order-13" class="order-label">Ingredient 13:</label><br>
+                    <textarea id="ingredient13" class="ingredient" placeholder="Ingredient name (Ex: 0.5kg chicken)"  maxlength="500"></textarea><br>
+                </div>
+
+                <div id="ingredient-div-14" class="ingredient-div">
+                    <label id="order-14" class="order-label">Ingredient 14:</label><br>
+                    <textarea id="ingredient14" class="ingredient" placeholder="Ingredient name (Ex: 0.5kg chicken)"  maxlength="500"></textarea><br>
+                </div>
+
+                <div id="ingredient-div-15" class="ingredient-div">
+                    <label id="order-15" class="order-label">Ingredient 15:</label><br>
+                    <textarea id="ingredient15" class="ingredient" placeholder="Ingredient name (Ex: 0.5kg chicken)"  maxlength="500"></textarea><br>
+                </div>
+
+                <div id="ingredient-div-16" class="ingredient-div">
+                    <label id="order-16" class="order-label">Ingredient 16:</label><br>
+                    <textarea id="ingredient16" class="ingredient" placeholder="Ingredient name (Ex: 0.5kg chicken)"  maxlength="500"></textarea><br>
+                </div>
+
+                <div id="ingredient-div-17" class="ingredient-div">
+                    <label id="order-17" class="order-label">Ingredient 17:</label><br>
+                    <textarea id="ingredient17" class="ingredient" placeholder="Ingredient name (Ex: 0.5kg chicken)"  maxlength="500"></textarea><br>
+                </div>
+
+                <div id="ingredient-div-18" class="ingredient-div">
+                    <label id="order-18" class="order-label">Ingredient 18:</label><br>
+                    <textarea id="ingredient18" class="ingredient" placeholder="Ingredient name (Ex: 0.5kg chicken)"  maxlength="500"></textarea><br>
+                </div>
+
+                <div id="ingredient-div-19" class="ingredient-div">
+                    <label id="order-19" class="order-label">Ingredient 19:</label><br>
+                    <textarea id="ingredient19" class="ingredient" placeholder="Ingredient name (Ex: 0.5kg chicken)"  maxlength="500"></textarea><br>
+                </div>
+
+                <div id="ingredient-div-20" class="ingredient-div">
+                    <label id="order-20" class="order-label">Ingredient 20:</label><br>
+                    <textarea id="ingredient20" class="ingredient" placeholder="Ingredient name (Ex: 0.5kg chicken)"  maxlength="500"></textarea><br>
+                </div>
+
+                <button class="add-ingredient-button" onclick="addIngredient()"><i class="fa fa-plus" style="font-size:30px;"></i> Add ingredient</button>
+
+                <!--Preparation time-->
+                <div class="preparation-time-icon-div">
+                    <img id="preparation-time-img" class="preparation-time-img" src="https://i.pinimg.com/564x/af/54/84/af5484b396d3fc264624afff8304755d.jpg"/>
+                </div>
+                <div class="preparation-time-title-div">
+                    <label id="preparation-time-title" class="preparation-time-title">Preparation time</label><b class="asterisk" style="color:red;"> *</b><br>
+                </div>
+
+                <button id="preparation-time-less-than-10-min-button" class="preparation-time-button" onclick="changePreparationTimeButton('preparation-time-less-than-10-min-button')">Less than 10 min</button>
+                <button id="preparation-time-up-to-20-min-button" class="preparation-time-button" onclick="changePreparationTimeButton('preparation-time-up-to-20-min-button')">Up to 20 min</button>
+                <button id="preparation-time-up-to-30-min-button" class="preparation-time-button" onclick="changePreparationTimeButton('preparation-time-up-to-30-min-button')">Up to 30 min</button>
+                <button id="preparation-time-up-to-40-min-button" class="preparation-time-button" onclick="changePreparationTimeButton('preparation-time-up-to-40-min-button')">Up to 40 min</button>
+                <button id="preparation-time-up-to-50-min-button" class="preparation-time-button" onclick="changePreparationTimeButton('preparation-time-up-to-50-min-button')">Up to 50 min</button>
+                <button id="preparation-time-more-than-50-min-button" class="preparation-time-button" onclick="changePreparationTimeButton('preparation-time-more-than-50-min-button')">More than 50 min</button>
+            
+
+                <!--Cooking time-->
+                <div class="cooking-time-icon-div">
+                    <img id="cooking-time-img" class="cooking-time-img" src="https://i.pinimg.com/564x/af/54/84/af5484b396d3fc264624afff8304755d.jpg"/>
+                </div>
+                <div class="cooking-time-title-div">
+                    <label id="cooking-time-title" class="cooking-time-title">Cooking time</label><b class="asterisk" style="color:red;"> *</b><br>
+                </div>
+
+                <button id="cooking-time-less-than-10-min-button" class="cooking-time-button" onclick="changeCookingTimeButton('cooking-time-less-than-10-min-button')">Less than 10 min</button>
+                <button id="cooking-time-up-to-20-min-button" class="cooking-time-button" onclick="changeCookingTimeButton('cooking-time-up-to-20-min-button')">Up to 20 min</button>
+                <button id="cooking-time-up-to-30-min-button" class="cooking-time-button" onclick="changeCookingTimeButton('cooking-time-up-to-30-min-button')">Up to 30 min</button>
+                <button id="cooking-time-up-to-40-min-button" class="cooking-time-button" onclick="changeCookingTimeButton('cooking-time-up-to-40-min-button')">Up to 40 min</button>
+                <button id="cooking-time-up-to-50-min-button" class="cooking-time-button" onclick="changeCookingTimeButton('cooking-time-up-to-50-min-button')">Up to 50 min</button>
+                <button id="cooking-time-more-than-50-min-button" class="cooking-time-button" onclick="changeCookingTimeButton('cooking-time-more-than-50-min-button')">More than 50 min</button>
+
+                <!--Steps-->
+                <div class="steps-img-div">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1237/1237072.png" id="steps-img" class="steps-img">
+                </div>
+                <div class="steps-title-div">
+                    <label id="steps-title" class="steps-title">Steps</label><br>
+                </div>
+
+                <button class="delete-step-button" onclick="deleteLatestStep()">-</button>
+
+                <div id="step-div-1" class="step-div">
+                    <label id="order-step-1" class="order-label">Step 1:</label><b class="asterisk" style="color:red;"> *</b><br>
+                    <textarea id="step1" class="step" placeholder="Separate egg yolks and egg whites"  maxlength="500"></textarea><br><br>
+                </div>
+
+                <div id="step-div-2" class="step-div">
+                    <label id="order-step-2" class="order-label">Step 2:</label><br>
+                    <textarea id="step2" class="step" placeholder="Separate egg yolks and egg whites"  maxlength="500"></textarea><br><br>
+                </div>
+                
+                <div id="step-div-3" class="step-div">
+                    <label id="order-step-3" class="order-label">Step 3:</label><br>
+                    <textarea id="step3" class="step" placeholder="Separate egg yolks and egg whites"  maxlength="500"></textarea><br><br>
+                </div>
+
+                <div id="step-div-4" class="step-div">
+                    <label id="order-step-4" class="order-label">Step 4:</label><br>
+                    <textarea id="step4" class="step" placeholder="Separate egg yolks and egg whites"  maxlength="500"></textarea><br><br>
+                </div>
+
+                <div id="step-div-5" class="step-div">
+                    <label id="order-step-5" class="order-label">Step 5:</label><br>
+                    <textarea id="step5" class="step" placeholder="Separate egg yolks and egg whites"  maxlength="500"></textarea><br><br>
+                </div>
+
+                <div id="step-div-6" class="step-div">
+                    <label id="order-step-6" class="order-label">Step 6:</label><br>
+                    <textarea id="step6" class="step" placeholder="Separate egg yolks and egg whites"  maxlength="500"></textarea><br><br>
+                </div>
+
+                <div id="step-div-7" class="step-div">
+                    <label id="order-step-7" class="order-label">Step 7:</label><br>
+                    <textarea id="step7" class="step" placeholder="Separate egg yolks and egg whites"  maxlength="500"></textarea><br><br>
+                </div>
+
+                <div id="step-div-8" class="step-div">
+                    <label id="order-step-8" class="order-label">Step 8:</label><br>
+                    <textarea id="step8" class="step" placeholder="Separate egg yolks and egg whites"  maxlength="500"></textarea><br><br>
+                </div>
+
+                <div id="step-div-9" class="step-div">
+                    <label id="order-step-9" class="order-label">Step 9:</label><br>
+                    <textarea id="step9" class="step" placeholder="Separate egg yolks and egg whites"  maxlength="500"></textarea><br><br>
+                </div>
+
+                <div id="step-div-10" class="step-div">
+                    <label id="order-step-10" class="order-label">Step 10:</label><br>
+                    <textarea id="step10" class="step" placeholder="Separate egg yolks and egg whites"  maxlength="500"></textarea><br><br>
+                </div>
+
+                <div id="step-div-11" class="step-div">
+                    <label id="order-step-11" class="order-label">Step 11:</label><br>
+                    <textarea id="step11" class="step" placeholder="Separate egg yolks and egg whites"  maxlength="500"></textarea><br><br>
+                </div>
+
+                <div id="step-div-12" class="step-div">
+                    <label id="order-step-12" class="order-label">Step 12:</label><br>
+                    <textarea id="step12" class="step" placeholder="Separate egg yolks and egg whites"  maxlength="500"></textarea><br><br>
+                </div>
+
+                <div id="step-div-13" class="step-div">
+                    <label id="order-step-13" class="order-label">Step 13:</label><br>
+                    <textarea id="step13" class="step" placeholder="Separate egg yolks and egg whites"  maxlength="500"></textarea><br><br>
+                </div>
+
+                <div id="step-div-14" class="step-div">
+                    <label id="order-step-14" class="order-label">Step 14:</label><br>
+                    <textarea id="step14" class="step" placeholder="Separate egg yolks and egg whites"  maxlength="500"></textarea><br><br>
+                </div>
+
+                <div id="step-div-15" class="step-div">
+                    <label id="order-step-15" class="order-label">Step 15:</label><br>
+                    <textarea id="step15" class="step" placeholder="Separate egg yolks and egg whites"  maxlength="500"></textarea><br><br>
+                </div>
+
+                <div id="step-div-16" class="step-div">
+                    <label id="order-step-16" class="order-label">Step 16:</label><br>
+                    <textarea id="step16" class="step" placeholder="Separate egg yolks and egg whites"  maxlength="500"></textarea><br><br>
+                </div>
+
+                <div id="step-div-17" class="step-div">
+                    <label id="order-step-17" class="order-label">Step 17:</label><br>
+                    <textarea id="step17" class="step" placeholder="Separate egg yolks and egg whites"  maxlength="500"></textarea><br><br>
+                </div>
+
+                <div id="step-div-18" class="step-div">
+                    <label id="order-step-18" class="order-label">Step 18:</label><br>
+                    <textarea id="step18" class="step" placeholder="Separate egg yolks and egg whites"  maxlength="500"></textarea><br><br>
+                </div>
+
+                <div id="step-div-19" class="step-div">
+                    <label id="order-step-19" class="order-label">Step 19:</label><br>
+                    <textarea id="step19" class="step" placeholder="Separate egg yolks and egg whites"  maxlength="500"></textarea><br><br>
+                </div>
+
+                <div id="step-div-20" class="step-div">
+                    <label id="order-step-20" class="order-label">Step 20:</label><br>
+                    <textarea id="step20" class="step" placeholder="Separate egg yolks and egg whites"  maxlength="500"></textarea><br><br>
+                </div>
+
+                <button class="add-step-button" onclick="addStep()"><i class="fa fa-plus" style="font-size:30px;"></i> Add step</button>
+
+                <!--Nutritional values-->
+                <div id="alert-wrong-calories" class="alert-wrong-calories"></div>
+
+                <div class="nutritional-values-img-div">
+                    <img src="https://cdn-icons-png.flaticon.com/512/87/87300.png" id="nutritional-values-img" class="nutritional-values-img">
+                </div>
+                <div class="nutritional-values-title-div">
+                    <label id="nutritional-values-title" class="nutritional-values-title">Nutritional values</label><br>
+                </div>
+
+                <div class="calories-title-div">
+                    <label id="calories-title" class="calories-title">Calories (kcal)<b class="asterisk" style="color:red;"> *</b></label>
+                    <div class="calories-textarea-div">
+                        <textarea id="calories-textarea" class="calories-textarea" placeholder="Ex: 200..." oninput="validateCalories()"  maxlength="500"></textarea>
+                    </div>
+                </div>
+
+                <button class="delete-nutritional-value-button" onclick="deleteLatestNutritionalValue()">-</button>
+
+                <textarea id="nutritional-value-1" class="nutritional-value" placeholder="Additional nutrition value (Ex: Fat 15g)"  maxlength="500"></textarea>
+                <textarea id="nutritional-value-2" class="nutritional-value" placeholder="Additional nutrition value (Ex: Fat 15g)"  maxlength="500"></textarea>
+                <textarea id="nutritional-value-3" class="nutritional-value" placeholder="Additional nutrition value (Ex: Fat 15g)"  maxlength="500"></textarea>
+                <textarea id="nutritional-value-4" class="nutritional-value" placeholder="Additional nutrition value (Ex: Fat 15g)"  maxlength="500"></textarea>
+                <textarea id="nutritional-value-5" class="nutritional-value" placeholder="Additional nutrition value (Ex: Fat 15g)"  maxlength="500"></textarea>
+                <textarea id="nutritional-value-6" class="nutritional-value" placeholder="Additional nutrition value (Ex: Fat 15g)"  maxlength="500"></textarea>
+                <textarea id="nutritional-value-7" class="nutritional-value" placeholder="Additional nutrition value (Ex: Fat 15g)"  maxlength="500"></textarea>
+                <textarea id="nutritional-value-8" class="nutritional-value" placeholder="Additional nutrition value (Ex: Fat 15g)"  maxlength="500"></textarea>
+                <textarea id="nutritional-value-9" class="nutritional-value" placeholder="Additional nutrition value (Ex: Fat 15g)"  maxlength="500"></textarea>
+                <textarea id="nutritional-value-10" class="nutritional-value" placeholder="Additional nutrition value (Ex: Fat 15g)"  maxlength="500"></textarea>
+                <textarea id="nutritional-value-11" class="nutritional-value" placeholder="Additional nutrition value (Ex: Fat 15g)"  maxlength="500"></textarea>
+                <textarea id="nutritional-value-12" class="nutritional-value" placeholder="Additional nutrition value (Ex: Fat 15g)"  maxlength="500"></textarea>
+                <textarea id="nutritional-value-13" class="nutritional-value" placeholder="Additional nutrition value (Ex: Fat 15g)"  maxlength="500"></textarea>
+                <textarea id="nutritional-value-14" class="nutritional-value" placeholder="Additional nutrition value (Ex: Fat 15g)"  maxlength="500"></textarea>
+                <textarea id="nutritional-value-15" class="nutritional-value" placeholder="Additional nutrition value (Ex: Fat 15g)"  maxlength="500"></textarea>
+                <textarea id="nutritional-value-16" class="nutritional-value" placeholder="Additional nutrition value (Ex: Fat 15g)"  maxlength="500"></textarea>
+                <textarea id="nutritional-value-17" class="nutritional-value" placeholder="Additional nutrition value (Ex: Fat 15g)"  maxlength="500"></textarea>
+                <textarea id="nutritional-value-18" class="nutritional-value" placeholder="Additional nutrition value (Ex: Fat 15g)"  maxlength="500"></textarea>
+                <textarea id="nutritional-value-19" class="nutritional-value" placeholder="Additional nutrition value (Ex: Fat 15g)"  maxlength="500"></textarea>
+                <textarea id="nutritional-value-20" class="nutritional-value" placeholder="Additional nutrition value (Ex: Fat 15g)"  maxlength="500"></textarea>
+
+                <button class="add-nutritional-value-button" onclick="addNutritionalValue()"><i class="fa fa-plus" style="font-size:30px;"></i> Add nutrition value</button>
+
+                <!--Additional images-->
+                <div class="nutritional-values-img-div">
+                    <img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-image-512.png" id="additional-images-img" class="additional-images-img">
+                </div>
+                <div class="additional-images-title-div">
+                    <label id="additional-images-title" class="additional-images-title">Additional images</label><br>
+                </div>
+                <input type="file" accept="image/*" multiple id="upload-additional-images-button" class="upload-additional-images-button">
+
+                <div class="next-button-div" id="next-button-div">
+                    <button id="next-button" class="next-button" onclick="Next()">Next</button>
+                </div>
+            </div>
+        </form>
+
+        <form name="upload-thumbnail-form" id="upload-thumbnail-form" class="post-recipe-form" onsubmit="return false;" style="display:none">
+            <div class="container">
+                <div id="back-to-post-recipe-form" class="back-to-post-recipe-form">
+                    <button id="back-to-post-recipe-form-button" onclick="backToPostRecipeForm()"><i class="fa fa-arrow-left" style="font-size:30px;"></i></button>
+                </div>
+                <div class="upload-thumbnail-div">
+                    <h1 class="upload-thumbnail-title" id="upload-thumbnail-title">Add thumbnail</h1>
+                </div>
+            </div>
+
+            <div class="alert-post-successfully" id="alert-post-successfully">
+                <label for="alert-post-successfully">Your recipe was posted successfully!</label>
+            </div>
+
+            <img src="data:image/png;base64,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" id="thumbnail-img" class="thumbnail-img" onclick="uploadThumbnail()">
+            <input type="file" id="upload-thumbnail" accept="image/*" hidden/>
+            <button id="delete-thumbnail" class="delete-thumbnail" onclick="deleteThumbnail()" disabled><i class="fa fa-trash"></i> Delete Thumbnail</i></button>
+
+            <div class="post-button-div" id="post-button-div">
+                <button id="post-button" class="post-button" onclick="post()" disabled>Post</button>
+            </div>
+        </form>
+
+        <script>
+            hideIngredients(2, 20);
+            hideSteps(2, 20);
+            hideNutritionalValues(2, 20);
+
+            username = sessionStorage.getItem("username");
+        
+            if (username === "GUEST") {
+                location.href = "/templates/mainpage.html";
+            }
+
+        </script>
+
+    </body>
+</html>

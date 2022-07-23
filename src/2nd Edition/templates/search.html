@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Foodaholic</title>
+        <!--Add Google Fonts-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">
+
+        <!--Add title icon-->
+        <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/5141/5141534.png">
+    
+        <!--Add style file-->
+        <link rel="stylesheet" href="/Styles/search.css">
+        <link rel="stylesheet" href="/Styles/navigation-bar.css">
+        <link rel="stylesheet" href="/Styles/loader.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <!--Add Javascript files-->
+        <script type="text/javascript" src="/Scripts/functions.js"></script>
+        <script type="text/javascript" src="/Scripts/search.js"></script>
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+        
+    </head>
+
+    <body>
+        <script>
+            hidePreloader();
+            var checkbox1_ticked = true;
+            var checkbox2_ticked = false;
+        </script>
+
+        <!--Add loading effect-->
+        <div id="loader-wrapper" class="loader-wrapper">
+            <span class="loader">
+                <span class="loader-inner">
+                </span>
+            </span>
+            <div class="loading-text">
+                <h2 class="loading">Loading...</h2>
+            </div>
+        </div>
+
+
+        <ul class="navigation-bar">
+            <li><a class="fa fa-home" href="/templates/mainpage.html" style="font-size:23px"></a></li>
+            <li><a class="home-button" href="/templates/mainpage.html"> Home</a></li>
+            <div class="about-us-div">
+                <li><a class="about-us" href="#about">About Us</a></li>
+                <span class="about-us-text">Foodaholic is created by Group 1 including
+                    <ul>
+                        <li>Le Trong Anh Tu: 20127091</li>
+                        <li>Nguyen Thien Nhan: 20127265</li>
+                        <li>Le Dang Khoa: 20127533</li>
+                        <li>Phan Tuan Khai: 20127524</li>
+                    </ul>
+                </span>
+            </div>
+            <li><a class="help" href="">Help</a></li>
+            <div class="profile-dropdown">
+                <button class="dropbtn">
+                    <div class="avatar-img-div">
+                        <img src="" id="avatar-img" class="avatar-img" alt="Avatar">
+                    </div>
+                    <div class="show-username-div">
+                        <h3 id="show-username" class="show-username"></h3>
+                    </div>
+                </button>
+                <div class="dropdown-content">
+                    <a id="profile-name" class="profile-name"></a>
+                    <a href="/templates/profile.html" id="edit-profile" style="border-top: 1px solid white"><i class="fa fa-edit"></i> Edit Information</a>
+                    <a href="#" id="change-username"><i class="fa fa-user"></i>&nbsp&nbspChange Username</a>
+                    <a href="#" id="change-password"><i class="fa fa-key"></i>&nbsp&nbspChange Password</a>
+                    <a href="#" id="like-list"><i class="fa fa-thumbs-up"></i>&nbsp&nbspLike List</a>
+                    <a href="#" id="comment-list"><i class="fa fa-comment"></i>&nbsp&nbspComment List</a>
+                    <a href="#" id="my-recipes"><i class="fa fa-book"></i>&nbsp&nbspMy Recipes</a>
+                    <a href="#" id="my-favorite"><i class="fas fa-bookmark"></i>&nbsp&nbspMy Favorites</a>
+                    <a href="javascript:signOut()" style="border-top: 1px solid white"><i class="fas fa-door-open"></i>&nbsp&nbspSign Out</a>
+                </div>
+            </div>
+        </ul>
+
+        <div id="title-div" class="title-div">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Chef_icon.svg/1200px-Chef_icon.svg.png" id="foodaholic-cook" class="foodaholic-cook">
+            <h1 id="title" class="title">Foodaholic</h1>
+            <div class="search-div" id="search-div">
+                <input type="search" id="search-bar" class="search-bar" placeholder="Search recipe (Ex: Fried rice)..." maxlength="200">
+                <button type="submit" id="search-button" class="search-button" onclick="search()"><i class="fa fa-search"></i></button>
+            </div>
+        </div>
+
+        <div class="show-input-div">
+            <label id="input-data" class="input-data"><strong>XXXXXXXX</strong></label>
+            <label id="number-of-post" class="number-of-post">(xx)</label>
+        </div>
+        <div id="sort-div" class="sort-div" onclick="showSortFilter()">
+            <label id="sort-by-label"><strong>Sort by</strong></label>
+        </div>
+
+        <div class="sort-features-div" id="sort-features-div">
+            <button id="newest-button" class="sort-feature-button">Newest to Oldest</button>
+            <button id="a-z-button" class="sort-feature-button">Name A-Z</button>
+            <button id="z-a-button" class="sort-feature-button">Name Z-A</button>
+            <button id="calories-high-to-low-button" class="sort-feature-button">Calories (High to low)</button>
+            <button id="calories-low-to-high-button" class="sort-feature-button">Calories (Low to high)</button>
+        </div>
+        <div style="border-left: 5px solid rgb(255, 165, 0, 0.4); height: 600px; margin-left: 420px; margin-top: -120px;"></div>
+
+        <div id="indent-div" class="indent-div"></div>
+
+        <div id="recipes-div" class="recipes-div">
+            <div class="no-result-div" id="no-result-div">
+                <img src="https://cdn-icons-png.flaticon.com/512/2771/2771401.png" id="no-recipe-img" class="no-recipe-img">
+                <div style="height:20px;"></div>
+                <label id="no-recipe-label" class="no-recipe-label"><strong>Oops... no results for XXXXXXXX...</strong></label>
+            </div>
+        </div>
+        <script>
+            username = sessionStorage.getItem("username");
+            avatar = sessionStorage.getItem("avatar");
+            cover = sessionStorage.getItem("cover");
+            anonymousAvatar = "data:image/png;base64," + sessionStorage.getItem("anonymousAvatar");
+
+            show_username = username;
+            if (username.length > 15) {
+                show_username = show_username.substring(0, 16) + "...";
+            }
+            document.getElementById("profile-name").innerHTML = show_username;
+            document.getElementById("show-username").innerHTML = show_username;
+            //var img = document.createElement("img");
+            //img.src = "data:image/;base64," + avatar;
+            //console.log(img.src);
+            var avatar_string = "data:image/;base64," + avatar;
+            document.getElementById("avatar-img").src = avatar_string;
+            //var cover_string = "data:image/;base64," + cover;
+            //document.getElementById("cover-img").src = cover_string;
+            
+            checkGuest();
+            showSearchResults();
+            
+            function chooseCheckbox1() {
+                document.getElementById("search-by-dish-name-button").style.backgroundColor = "rgb(37, 189, 37)";
+                document.getElementById("search-by-ingredients-button").style.backgroundColor = "transparent";
+                document.getElementById("search-bar").placeholder = 'Search by dish name (Ex: Fried rice)...';
+                checkbox1_ticked = true;
+                checkbox2_ticked = false;
+            }
+            function chooseCheckbox2() {
+                document.getElementById("search-by-ingredients-button").style.backgroundColor = "rgb(37, 189, 37)";
+                document.getElementById("search-by-dish-name-button").style.backgroundColor = "transparent";
+                document.getElementById("search-bar").placeholder = 'Search by ingredients (Ex: beef, noodle, chicken)...';
+                checkbox1_ticked = false;
+                checkbox2_ticked = true;
+            }
+
+        </script>
+    </body>
+</html>
