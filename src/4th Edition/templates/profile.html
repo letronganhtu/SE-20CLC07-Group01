@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Foodaholic</title>
+        <!--Add Google Fonts-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">
+
+        <!--Add title icon-->
+        <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/5141/5141534.png">
+    
+        <!--Add style file-->
+        <link rel="stylesheet" href="/Styles/profile.css">
+        <link rel="stylesheet" href="/Styles/navigation-bar.css">
+        <link rel="stylesheet" href="/Styles/loader.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <!--Add Javascript files-->
+        <script type="text/javascript" src="/Scripts/functions.js"></script>
+        <script type="text/javascript" src="/Scripts/profile.js"></script>
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    </head>
+
+    <body>
+        <script>
+            hidePreloader();
+        </script>
+
+        <!--Add loading effect-->
+        <div id="loader-wrapper" class="loader-wrapper">
+            <span class="loader">
+                <span class="loader-inner">
+                </span>
+            </span>
+            <div class="loading-text">
+                <h2 class="loading">Loading...</h2>
+            </div>s
+        </div>
+        
+        <ul class="navigation-bar">
+            <li><a class="fa fa-home" href="/templates/mainpage.html" style="font-size:23px"></a></li>
+            <li><a class="home-button" href="/templates/mainpage.html"> Home</a></li>
+            <div class="about-us-div">
+                <li><a class="about-us" href="#about">About Us</a></li>
+                <span class="about-us-text">Foodaholic is created by Group 1 including
+                    <ul>
+                        <li>Le Trong Anh Tu: 20127091</li>
+                        <li>Nguyen Thien Nhan: 20127265</li>
+                        <li>Le Dang Khoa: 20127533</li>
+                        <li>Phan Tuan Khai: 20127524</li>
+                    </ul>
+                </span>
+            </div>
+            <div class="profile-dropdown">
+                <button class="dropbtn">
+                    <div class="avatar-img-div">
+                        <img src="" id="avatar-icon" class="avatar-icon" alt="Avatar">
+                    </div>
+                    <div class="show-username-div">
+                        <h3 id="show-username" class="show-username"></h3>
+                    </div>
+                </button>
+                <div class="dropdown-content">
+                    <a id="profile-name" class="profile-name"></a>
+                    <a href="/templates/my-post.html" id="my-recipes" style="border-top: 1px solid white"><i class="fa fa-book"></i>&nbsp&nbspMy Recipes</a>
+                    <a href="/templates/profile.html" id="edit-profile"><i class="fa fa-edit"></i> Edit Information</a>
+                    <a href="#" id="change-username"><i class="fa fa-user"></i>&nbsp&nbspChange Username</a>
+                    <a href="#" id="change-password"><i class="fa fa-key"></i>&nbsp&nbspChange Password</a>
+                    <!--<a href="#" id="like-list"><i class="fa fa-thumbs-up"></i>&nbsp&nbspLike List</a>-->
+                    <!--<a href="#" id="comment-list"><i class="fa fa-comment"></i>&nbsp&nbspComment List</a>-->
+                    <a href="/templates/my-favorite.html" id="my-favorite"><i class="fas fa-bookmark"></i>&nbsp&nbspMy Favorites</a>
+                    <a href="javascript:signOut()" style="border-top: 1px solid white"><i class="fas fa-door-open"></i>&nbsp&nbspSign Out</a>
+                </div>
+            </div>
+        </ul>
+
+        <div class="profile-pictures">
+            <div class="avatar-div">
+                <img src="" id="main-avatar-img" class="main-avatar-img">
+                <div class="upload-btn-wrapper">
+                    <input type="file" id="upload-avatar" accept="image/*" hidden/>
+                    <button class="upload-btn" onclick="uploadAvatar()"><i class="fa fa-upload"></i></button>
+                </div>
+                <button id="delete-avatar" class="delete-avatar" onclick="deleteAvatar()"><i class="fa fa-trash"></i> Delete Avatar</i></button>
+            </div> 
+
+            <div class="cover-div">
+                <img src="" id="cover-img" class="cover-img">
+                <div class="upload-cover-btn-wrapper">
+                    <input type="file" id="upload-cover" accept="image/*" hidden/>
+                    <button class="upload-cover-btn" onclick="uploadCover()"><i class="fa fa-upload"></i></button>
+                </div>
+                <button id="delete-cover" class="delete-cover" onclick="deleteCover()"><i class="fa fa-trash"></i> Delete Cover</i></button>
+            </div>
+        </div>
+
+        <div class="div-profile-name">
+            <h1 id="onpage-profile-fullname" class="profile-fullname"></h1>
+            <h3 id="onpage-profile-username" class="profile-username"></h3>
+        </div>
+
+        <div class="edit-profile-div">
+            <div class="alert-edit-successfully" id="alert-edit-successfully">
+                <label for="alert-edit-successfully">Your information was updated successfully!</label>
+            </div>
+            <div id="alert-existed-account" class="alert-existed-account"></div>
+            <div id="alert-wrong-password-format" class="alert-wrong-password-format"></div>
+            <div id="alert-not-match-password" class="alert-not-match-password"></div>
+            <div id="alert-firstname" class="alert-firstname"></div>
+            <div id="alert-surname" class="alert-surname"></div>
+            <div id="alert-email" class="alert-email"></div>
+            <div id="alert-phone" class="alert-phone"></div>
+
+            <form name="edit-profile-form" class="edit-profile-form" onsubmit="return false;">
+                <div class="container">
+                    <div id="name" class="name">
+                        <label for="firstname">First name</label>
+                        <label for="surname" style="margin-left:34%;">Surname</label>
+                        <input type="text" id="firstname" name="firstname" oninput="validateFirstname()" style="width:45%;" required maxlength="30">
+                        <input type="text" id="surname" name="surname" oninput="validateSurname()" required style="width:48%; margin-left:5.9%;" required maxlength="30"><br>
+                    </div>
+
+                    <label for="#email">Email</label>
+                    <input type="text" id="email" name="email" oninput="validateEmail()" required  maxlength="100"><br>
+                    
+                    <label for="#phone">Phone number</label>
+                    <input type="text" id="phone" name="phone" oninput="validatePhone()" required maxlength="12"><br>
+
+                    <input type="submit" class="submit-button" value="Submit" id="submit-button" onclick="sendSubmit()"><br>
+                    <input type="submit" class="cancel-button" value="Cancel" id="cancel-button" onclick="javascript:location.reload();"><br>
+                </div>
+            </form>
+        </div>
+
+        <script>
+            getProfileInformation();
+            getAnonymousAvatarAndCover();
+            username = sessionStorage.getItem("username");
+            show_username = username;
+            if (username.length > 15) {
+                show_username = show_username.substring(0, 16) + "...";
+            }
+            document.getElementById("profile-name").innerHTML = show_username;
+            document.getElementById("show-username").innerHTML = show_username;
+            if (username === "GUEST") {
+                alert("Cannot access this page as a GUEST");
+                location.href = "/templates/mainpage.html";
+            }
+            if (sessionStorage.getItem("avatar") === sessionStorage.getItem("anonymousAvatar")) {
+                document.getElementById("delete-avatar").disabled = true;
+                document.getElementById("delete-avatar").style.opacity = 0.5;
+                document.getElementById("delete-avatar").style.cursor = "no-drop";
+            }
+            if (sessionStorage.getItem("cover") === sessionStorage.getItem("anonymousCover")) {
+                document.getElementById("delete-cover").disabled = true;
+                document.getElementById("delete-cover").style.opacity = 0.5;
+                document.getElementById("delete-cover").style.cursor = "no-drop";
+            }
+        </script>
+            
+        <script>
+        </script>
+
+    </body>
+</html>
