@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Sign Up - Foodaholic</title>
+        <!--Add Google Fonts-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">
+
+        <!--Add title icon-->
+        <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/5141/5141534.png">
+    
+        <!--Add style files-->
+        <link rel="stylesheet" href="/Styles/signup.css">
+        <link rel="stylesheet" href="/Styles/navigation-bar.css">
+        <link rel="stylesheet" href="/Styles/loader.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!--Add Javascript file-->
+        <script type="text/javascript" src="/Scripts/functions.js"></script>
+        <script type="text/javascript" src="/Scripts/signup.js"></script>
+    </head>
+
+    <body>
+        <script>
+            hidePreloader();
+        </script>
+
+        <ul class="navigation-bar">
+            <li><a class="fa fa-home" href="/templates/signin.html" style="font-size:23px"></a></li>
+            <li><a class="home-button" href="/templates/signin.html"> Home</a></li>
+            <div class="about-us-div">
+                <li><a class="about-us" href="#about">About Us</a></li>
+                <span class="about-us-text">Foodaholic is created by Group 1 including
+                    <ul>
+                        <li>Le Trong Anh Tu: 20127091</li>
+                        <li>Nguyen Thien Nhan: 20127265</li>
+                        <li>Le Dang Khoa: 20127533</li>
+                        <li>Phan Tuan Khai: 20127524</li>
+                    </ul>
+                </span>
+            </div>
+        </ul>
+
+        <!--Add loading effect-->
+        <div id="loader-wrapper" class="loader-wrapper">
+            <span class="loader">
+                <span class="loader-inner">
+                </span>
+            </span>
+            <div class="loading-text">
+                <h2 class="loading">Loading...</h2>
+            </div>
+        </div>
+
+        <div class="sign-in-form">
+            <h2 class="sign-in-title" style="text-align: center; width: 100%; margin-top: 5%">Sign Up</h2>
+            <div id="alert-existed-account" class="alert-existed-account"></div>
+            <div id="alert-wrong-password-format" class="alert-wrong-password-format"></div>
+            <div id="alert-not-match-password" class="alert-not-match-password"></div>
+            <div id="alert-firstname" class="alert-firstname"></div>
+            <div id="alert-surname" class="alert-surname"></div>
+            <div id="alert-email" class="alert-email"></div>
+            <div id="alert-phone" class="alert-phone"></div>
+
+            <form name="sign-up-form" class="sign-up-form" onsubmit="return false;">
+                <div class="container">
+                    <label for="uname">Username<b class="asterisk"> *</b></label><br>
+                    <input type="text" id="uname" name="uname" placeholder="Enter Username..." required maxlength="20" oninput="validateUsername()"><br>
+                    
+                    <label for="psw">Password<b class="asterisk"> *</b></label><br>
+                    <span id="warning-caps-lock" style="color:red; display: none; padding-top: 10px;">Warning: Caps Lock is on</span>
+                    <input type="password" id="psw" name="psw" placeholder="Enter Password..." required maxlength="20" oninput="validatePassword()"><br>
+
+                    <div id="message">
+                        <small>Password must contain the following:</small><br>
+                        <small id="letter" class="invalid">A <b>lowercase</b> letter</small><br>
+                        <small id="capital" class="invalid">A <b>capital (uppercase)</b> letter</small><br>
+                        <small id="number" class="invalid">A <b>number</b></small><br>
+                        <small id="special_character" class="invalid">A <b>special character</b></small><br>
+                        <small id="length" class="invalid">Minimum <b>6 characters</b></small><br>
+                    </div>
+
+                    <label for="confirm-psw">Confirm Password<b class="asterisk" > *</b></label><br>
+                    <input type="password" id="confirm-psw" name="confirm-psw" placeholder="Enter Password..." required maxlength="20" oninput="validateReenterPassword()"><br>
+                    
+                    <div id="name" class="name">
+                        <label for="firstname">First name<b class="asterisk"> *</b></label>
+                        <label for="surname" style="margin-left:30%;">Surname<b class="asterisk"> *</b></label>
+                        <input type="text" id="firstname" name="firstname" placeholder="Enter your first name..." oninput="validateFirstname()" style="width:45%;" required maxlength="30">
+                        <input type="text" id="surname" name="surname" placeholder="Enter your surname..." oninput="validateSurname()" required style="width:48%; margin-left:5.9%;" required maxlength="30"><br>
+                    </div>
+
+                    <label for="#email">Email<b class="asterisk"> *</b></label>
+                    <input type="text" id="email" name="email" placeholder="Enter your email..." oninput="validateEmail()" required  maxlength="100"><br>
+
+                    <label for="#phone">Phone number<b class="asterisk"> *</b></label>
+                    <input type="text" id="phone" name="phone" placeholder="Enter your phone..." oninput="validatePhone()" required maxlength="12"><br>
+
+                    <input type="submit" class="sign-up-button" value="Sign Up" id="sign-up-button" onclick="SendToAndGetDataFromServer()"><br>
+                </div>
+            </form>
+            <div class="alert-sign-up-successfully" id="alert-sign-up-successfully">
+                <label for="alert-sign-up-successfully">Sign up successfully! Directing to sign in...</label>
+            </div>
+            <div class="back-to-sign-in">
+                <label>Already have an account?</label>
+                <a class="back-to-sign-in" href="javascript:OpenSignInPage()">Back to Sign In<br>
+            </div>
+        </div>
+
+        <script>
+            let input = document.getElementById('psw');
+            let text = document.getElementById("warning-caps-lock");
+            input.addEventListener("keyup", function(event) {
+                // If "caps lock" is pressed, display the warning text
+                if (event.getModifierState("CapsLock")) {
+                    text.style.display = "block";
+                } 
+                else {
+                    text.style.display = "none";
+                    }
+            });
+
+            input = document.getElementById('confirm-psw');
+            input.addEventListener("keyup", function(event) {
+                // If "caps lock" is pressed, display the warning text
+                if (event.getModifierState("CapsLock")) {
+                    text.style.display = "block";
+                } 
+                else {
+                    text.style.display = "none";
+                    }
+            });
+        </script>
+    </body>
+</html>

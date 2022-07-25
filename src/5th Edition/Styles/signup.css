@@ -1,0 +1,152 @@
+/* Add styles to sign up form */
+b.asterisk {
+    color: red;
+}
+div.sign-up-form {
+    font-family: 'Arial';
+    text-align: center;
+    display: block;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+form.sign-up-form {
+    border: 3px solid #f1f1f1;
+    border-radius: 20px;
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    margin-top: 5px;
+}
+
+.container input[type=text], .container input[type=password],
+.container input[type=date] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 15px 0px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 20px;
+}
+select.gender {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 15px 0px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+option.male, option.female {
+    padding: 12px 20px;
+    margin: 15px 0px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+input.sign-up-button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-size: 17px;
+  border-radius: 20px;
+}
+input.sign-up-button:hover {
+  opacity: 0.8;
+}
+div.back-to-sign-in {
+    width: 100%;
+    text-align: center;
+    padding-top: 15px;
+}
+button.back-to-sign-in {
+    background-color: rgb(252, 199, 102);
+    width: auto;
+    padding: 10px 18px;
+    color: black;
+    border: none;
+    border-radius: 20px;
+}
+button.back-to-sign-in:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+.container {
+    padding: 16px;
+}
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* Add styles to password validation */
+#message {
+    display:none;
+    background: #f1f1f1;
+    color: #000;
+    position: relative;
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+#message small {
+    padding: 10px 35px;
+}
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+    color: green;
+}
+.valid:before {
+    position: relative;
+    left: -35px;
+    content: "\2713";
+}
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+    color: #f7a6a6;
+}
+.invalid:before {
+    position: relative;
+    left: -35px;
+    content: "\2716";
+}
+
+
+/* Add styles to alert boxes */
+div.alert-existed-account, div.alert-wrong-password-format, div.alert-not-match-password, div.alert-firstname, div.alert-surname, div.alert-email, 
+div.alert-phone {
+    padding: 10px;
+    color: white;
+    font-family: "Arial";
+    text-align: center;
+    display: none;
+    background-color: red;
+    width: 434px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 15px;
+    margin-top: 5px;
+    border-radius: 20px;
+}
+
+
+
+div.alert-sign-up-successfully {
+    padding: 20px;
+    color: green;
+    font-family: "Arial";
+    text-align: center;
+    display: none;
+    background-color: rgb(138, 248, 147);
+    width: 434px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 15px;
+    margin-top: 5px;
+    border-radius: 20px;
+}
