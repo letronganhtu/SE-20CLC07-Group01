@@ -1,0 +1,243 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Add styles to foodaholic-cook and search bar*/
+#title-div {
+    background-color: transparent;
+    margin-top: 50px;
+}
+#foodaholic-cook {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: orange;
+}
+h1.title {
+    font-family: "Sofia", sans-serif;
+    color: purple;
+    font-style: italic;
+    font-size: 35px;
+    margin-top: -70px;
+    margin-left: 100px;
+}
+#search-div {
+    margin-left: -100px;
+    margin-top: 35px;
+    height: 45px;
+    position: absolute;
+}
+input.search-bar {
+    width: 470px;
+    height: 100%;
+    border: 1px solid grey;
+    padding: 0 0 0 20px;
+    border-radius: 25px;
+    background-color: transparent;
+}
+button.search-button {
+    width: 50px;
+    height: 48px;
+    background-color: orange;
+    margin-left: -30px;
+    margin-top: -5px;
+    border: none;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    cursor: pointer;
+}
+button.search-button:hover {
+    background-color: #FBAB7E;
+    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 50%, #ffffff 100%);
+}
+#open-post-button {
+    text-align: center;
+    margin-left: 120px;
+    margin-top: 30px;
+    font-size: 22px;
+    padding: 15px 30px;
+    border-radius: 25px;
+    border: 1px solid grey;
+    background-color: transparent;
+    font-family: "Arial", sans-serif;
+    cursor: pointer;
+}
+#open-post-button:hover {
+    background-color: rgb(255, 165, 0, 0.85);
+}
+#fa-fa-plus {
+    font-size: 15px;
+    margin-left: -3px;
+}
+
+/* Add styles to newest dishes */
+#newest-dishes-div {
+    height: auto;
+    margin-top: 270px;
+    margin-left: -8px;
+    width: 105%;
+}
+#newest-dishes-title-div {
+    font-family: "Arial", sans-serif;
+    color: rgb(42, 39, 238);
+    font-style: italic;
+}
+#newest-dishes-title {
+    margin-left: 75px;
+}
+div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    margin-left: 120px;
+    margin-bottom: 20px;
+    width: 250px;
+    height: 245px;
+    background-color: rgb(0, 0, 0, 0.1);
+}
+div.gallery img.post-image {
+    width: 100%;
+    height: 150px;
+    border-bottom: 2px solid grey;
+}
+div.gallery img.post-image:hover {
+    opacity: 0.7;
+}
+small.recipe-name {
+    margin-left: 10px;
+    padding-top: 5px;
+    font-weight: bold;
+}
+div.post-avatar-icon-div {
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+img.post-avatar-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 90%;
+    border: none;
+    margin-top: 20px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+div.post-username {
+    width: 120px;
+    height: 20px;
+    background-color: transparent;
+    margin-top: -10px;
+    margin-left: 52px;
+    cursor: pointer;
+}
+div.post-username:hover {
+    text-decoration: underline;
+    color: purple;
+}
+div.postingUser {
+    margin-top: -5px;
+    width: 70%;
+    height: 45px;
+    background-color:transparent;
+}
+button.see-more-button {
+    width: 100%;
+    height: 40px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    border: 2px solid white;
+    background-color: transparent;
+}
+button.see-more-button:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+    color: purple;
+}
+
+
+/* Add styles to trending now */
+#trending-now-div {
+    height: auto;
+    margin-top: 20px;
+    margin-left: -8px;
+    width: 105%;
+}
+#trending-now-title-div {
+    font-family: "Arial", sans-serif;
+    color: rgb(42, 39, 238);
+    font-style: italic;
+}
+#trending-now-title {
+    margin-left: 75px;
+}
+div.gallery-trending-now {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    margin-left: 120px;
+    margin-bottom: 20px;
+    width: 250px;
+    height: 245px;
+    background-color: rgb(0, 0, 0, 0.1);
+}
+div.gallery-trending-now img.post-image-trending-now {
+    width: 100%;
+    height: 150px;
+    border-bottom: 2px solid grey;
+}
+div.gallery-trending-now img.post-image-trending-now:hover {
+    opacity: 0.7;
+}
+div.like-trending-now-div {
+    width: auto;
+    min-width: 80px;
+    height: 20px;
+    background-color: white;
+    position: absolute;
+    text-align: center;
+    border-radius: 20px;
+    border: 1px solid grey;
+    padding: 2px 5px 2px 5px;
+}
+small.recipe-name-trending-now {
+    margin-left: 10px;
+    padding-top: 5px;
+    font-weight: bold;
+}
+div.post-avatar-icon-div-trending-now {
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+img.post-avatar-icon-trending-now {
+    width: 40px;
+    height: 40px;
+    border-radius: 90%;
+    border: none;
+    margin-top: 20px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+div.post-username-trending-now {
+    width: 120px;
+    height: 20px;
+    background-color: transparent;
+    margin-top: -10px;
+    margin-left: 52px;
+    cursor: pointer;
+}
+div.post-username-trending-now:hover {
+    text-decoration: underline;
+    color: purple;
+}
+div.postingUser-trending-now {
+    margin-top: -5px;
+    width: 70%;
+    height: 45px;
+    background-color:transparent;
+}

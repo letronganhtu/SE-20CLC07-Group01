@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Foodaholic</title>
+        <!--Add Google Fonts-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">
+
+        <!--Add title icon-->
+        <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/5141/5141534.png">
+    
+        <!--Add style file-->
+        <link rel="stylesheet" href="/Styles/admin-mainpage.css">
+        <link rel="stylesheet" href="/Styles/navigation-bar.css">
+        <link rel="stylesheet" href="/Styles/loader.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <!--Add Javascript files-->
+        <script type="text/javascript" src="/Scripts/functions.js"></script>
+        <script type="text/javascript" src="/Scripts/admin-mainpage.js"></script>
+        
+    </head>
+
+    <body>
+        <script>
+            hidePreloader();
+        </script>
+
+        <!--Add loading effect-->
+        <div id="loader-wrapper" class="loader-wrapper">
+            <span class="loader">
+                <span class="loader-inner">
+                </span>
+            </span>
+            <div class="loading-text">
+                <h2 class="loading">Loading...</h2>
+            </div>
+        </div>
+
+
+        <ul class="navigation-bar">
+            <li><a class="fa fa-home" href="/templates/admin-mainpage.html" style="font-size:23px"></a></li>
+            <li><a class="home-button" href="/templates/admin-mainpage.html"> Home</a></li>
+            <div class="about-us-div">
+                <li><a class="about-us" href="#about">About Us</a></li>
+                <span class="about-us-text">Foodaholic is created by Group 1 including
+                    <ul>
+                        <li>Le Trong Anh Tu: 20127091</li>
+                        <li>Nguyen Thien Nhan: 20127265</li>
+                        <li>Le Dang Khoa: 20127533</li>
+                        <li>Phan Tuan Khai: 20127524</li>
+                    </ul>
+                </span>
+            </div>
+            <div class="profile-dropdown">
+                <button class="dropbtn">
+                    <div class="avatar-img-div">
+                        <img src="" id="avatar-img" class="avatar-img" alt="Avatar">
+                    </div>
+                    <div class="show-username-div">
+                        <h3 id="show-username" class="show-username"></h3>
+                    </div>
+                </button>
+                <div class="dropdown-content">
+                    <a id="profile-name" class="profile-name"></a>
+                    <a href="#" id="edit-profile" style="border-top: 1px solid white; opacity: 0.5; "><i class="fa fa-edit"></i> Edit Information</a>
+                    <a href="javascript:signOut()"><i class="fa fa-sign-out"></i> Sign Out</a>
+                </div>
+            </div>
+        </ul>
+
+        <div id="main-report-div" class="main-report-div">
+            <div id="report-field-div" class="report-field-div">
+                <button id="reported-posts-button" class="reported-button" onclick="readReportedPosts()">Reported Posts</button>
+                <button id="reported-accounts-button" class="reported-button" onclick="readReportedAccounts()">Reported Accounts</button>
+                <div id="reports-div" class="reports-div">
+                    <table id="reports-table">
+                        <tr>
+                            <th>Reported ID Post</th>
+                            <th>Reporter</th>
+                            <th>Reason</th>
+                            <th>Action</th>
+                        </tr>
+                        <tr id="no-reports">
+                            <td colspan="4" class="no-reports-title">No reports</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+        <script>
+            username = sessionStorage.getItem("username");
+            avatar = sessionStorage.getItem("avatar");
+            cover = sessionStorage.getItem("cover");
+            anonymousAvatar = "data:image/png;base64," + sessionStorage.getItem("anonymousAvatar");
+            
+            show_username = username;
+            if (username.length > 15) {
+                show_username = show_username.substring(0, 16) + "...";
+            }
+            document.getElementById("profile-name").innerHTML = show_username;
+            document.getElementById("show-username").innerHTML = show_username;
+            //var img = document.createElement("img");
+            //img.src = "data:image/;base64," + avatar;
+            //console.log(img.src);
+            var avatar_string = "data:image/;base64," + avatar;
+            document.getElementById("avatar-img").src = avatar_string;
+            //var cover_string = "data:image/;base64," + cover;
+            //document.getElementById("cover-img").src = cover_string;
+            document.getElementById('reported-posts-button').style.backgroundColor = 'rgb(0, 0, 0, 0.3)';
+            readReportedPosts();
+        </script>
+    </body>
+</html>

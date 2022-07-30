@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Foodaholic</title>
+        <!--Add Google Fonts-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">
+
+        <!--Add title icon-->
+        <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/5141/5141534.png">
+    
+        <!--Add style file-->
+        <link rel="stylesheet" href="/Styles/mainpage.css">
+        <link rel="stylesheet" href="/Styles/navigation-bar.css">
+        <link rel="stylesheet" href="/Styles/loader.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <!--Add Javascript files-->
+        <script type="text/javascript" src="/Scripts/functions.js"></script>
+        <script type="text/javascript" src="/Scripts/mainpage.js"></script>
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+        
+    </head>
+
+    <body>
+        <script>
+            hidePreloader();
+        </script>
+
+        <!--Add loading effect-->
+        <div id="loader-wrapper" class="loader-wrapper">
+            <span class="loader">
+                <span class="loader-inner">
+                </span>
+            </span>
+            <div class="loading-text">
+                <h2 class="loading">Loading...</h2>
+            </div>
+        </div>
+
+
+        <ul class="navigation-bar">
+            <li><a class="fa fa-home" href="/templates/mainpage.html" style="font-size:23px"></a></li>
+            <li><a class="home-button" href="/templates/mainpage.html"> Home</a></li>
+            <div class="about-us-div">
+                <li><a class="about-us" href="#about">About Us</a></li>
+                <span class="about-us-text">Foodaholic is created by Group 1 including
+                    <ul>
+                        <li>Le Trong Anh Tu: 20127091</li>
+                        <li>Nguyen Thien Nhan: 20127265</li>
+                        <li>Le Dang Khoa: 20127533</li>
+                        <li>Phan Tuan Khai: 20127524</li>
+                    </ul>
+                </span>
+            </div>
+            <div class="profile-dropdown">
+                <button class="dropbtn">
+                    <div class="avatar-img-div">
+                        <img src="" id="avatar-img" class="avatar-img" alt="Avatar">
+                    </div>
+                    <div class="show-username-div">
+                        <h3 id="show-username" class="show-username"></h3>
+                    </div>
+                </button>
+                <div class="dropdown-content">
+                    <a id="profile-name" class="profile-name"></a>
+                    <a href="/templates/my-post.html" id="my-recipes" style="border-top: 1px solid white"><i class="fa fa-book"></i>&nbsp&nbspMy Recipes</a>
+                    <a href="/templates/profile.html" id="edit-profile"><i class="fa fa-edit"></i> Edit Information</a>
+                    
+                    <a href="/templates/change-password.html" id="change-password"><i class="fa fa-key"></i>&nbsp&nbspChange Password</a>
+                    <!--<a href="#" id="like-list"><i class="fa fa-thumbs-up"></i>&nbsp&nbspLike List</a>-->
+                    <!--<a href="#" id="comment-list"><i class="fa fa-comment"></i>&nbsp&nbspComment List</a>-->
+                    <a href="/templates/my-favorite.html" id="my-favorite"><i class="fas fa-bookmark"></i>&nbsp&nbspMy Favorites</a>
+                    <a href="javascript:signOut()" style="border-top: 1px solid white"><i class="fas fa-door-open"></i>&nbsp&nbspSign Out</a>
+                </div>
+            </div>
+        </ul>
+
+        <!--Add suspended announcement-->
+        <div id="suspended-div" style="width:100%;height:400px;text-align:center;padding-top:250px;display:none;">
+            <span style="font-size:35px;font-weight:bold;"><i class="fa fa-times" style="color:red;"></i> Oops... This account has been suspended</span>
+        </div>
+
+        <!--Add Foodaholic title, search bar, post button-->
+        <div id="title-div" class="title-div">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Chef_icon.svg/1200px-Chef_icon.svg.png" id="foodaholic-cook" class="foodaholic-cook">
+            <h1 id="title" class="title">Foodaholic</h1>
+            <div class="search-div" id="search-div">
+                <input type="search" id="search-bar" class="search-bar" placeholder="Search recipe (Ex: Fried rice)..." maxlength="200">
+                <button type="submit" id="search-button" class="search-button" onclick="search()"><i class="fa fa-search"></i></button>
+                
+                <div style="width:100%">
+                    <button id="open-post-button" class="open-post-button" onclick="location.href='/templates/post-recipe.html'"><i class="fa fa-book"></i>&nbsp<i id="fa-fa-plus" class="fa fa-plus"></i> Post recipe here</button>
+                </div>
+            </div>
+        </div>
+
+        <!--Newest dishes-->
+        <div id="newest-dishes-div" class="newest-dishes-div">
+            <div id="newest-dishes-title-div" class="newest-dishes-title-div">
+                <h2 id="newest-dishes-title" class="newest-dishes-div"><u>Newest Dishes</u></h2>
+            </div>
+
+            <div class="gallery" id="gallery-1">
+                <a id='view-post-1' href="javascript:viewDetailPost('view-post-1')"><img id="post-image-1" src="https://previews.123rf.com/images/lkeskinen/lkeskinen1610/lkeskinen161000246/63375277-no-information-rubber-stamp-on-white-print-impress-overprint-.jpg" class="post-image"></a>
+                <small id="recipe-name-1" class="recipe-name">XXXXXXXX</small>
+                <div class="postingUser">
+                    <div id="post-avatar-icon-div-1" class="post-avatar-icon-div">
+                        <img src="" id="post-avatar-icon-1" class="post-avatar-icon" onclick="viewUserWall(this.id)">
+                    </div>
+                    <div id="post-username-1" class="post-username" onclick="viewUserWall(this.id)">XXXXXXXX</div>
+                </div>
+            </div>
+            
+            <div class="gallery" id="gallery-2">
+                <a id='view-post-2' href="javascript:viewDetailPost('view-post-2')"><img id="post-image-2" src="https://previews.123rf.com/images/lkeskinen/lkeskinen1610/lkeskinen161000246/63375277-no-information-rubber-stamp-on-white-print-impress-overprint-.jpg"  class="post-image"></a>
+                <small id="recipe-name-2" class="recipe-name">XXXXXXXX</small>
+                <div class="postingUser">
+                    <div id="post-avatar-icon-div-2" class="post-avatar-icon-div">
+                        <img src="" id="post-avatar-icon-2" class="post-avatar-icon" onclick="viewUserWall(this.id)">
+                    </div>
+                    <div id="post-username-2" class="post-username" onclick="viewUserWall(this.id)">XXXXXXXX</div>
+                </div>
+            </div>
+
+            <div class="gallery" id="gallery-3">
+                <a id='view-post-3' href="javascript:viewDetailPost('view-post-3')"><img id="post-image-3" src="https://previews.123rf.com/images/lkeskinen/lkeskinen1610/lkeskinen161000246/63375277-no-information-rubber-stamp-on-white-print-impress-overprint-.jpg" class="post-image"></a>
+                <small id="recipe-name-3" class="recipe-name">XXXXXXXX</small>
+                <div class="postingUser">
+                    <div id="post-avatar-icon-div-3" class="post-avatar-icon-div">
+                        <img src="" id="post-avatar-icon-3" class="post-avatar-icon" onclick="viewUserWall(this.id)">
+                    </div>
+                    <div id="post-username-3" class="post-username" onclick="viewUserWall(this.id)">XXXXXXXX</div>
+                </div>
+            </div>
+            
+            <div class="gallery" id="gallery-4">
+                <a id='view-post-4' href="javascript:viewDetailPost('view-post-4')"><img id="post-image-4" src="https://previews.123rf.com/images/lkeskinen/lkeskinen1610/lkeskinen161000246/63375277-no-information-rubber-stamp-on-white-print-impress-overprint-.jpg" class="post-image"></a>
+                <small id="recipe-name-4" class="recipe-name">XXXXXXXX</small>
+                <div class="postingUser">
+                    <div id="post-avatar-icon-div-4" class="post-avatar-icon-div">
+                        <img src="" id="post-avatar-icon-4" class="post-avatar-icon" onclick="viewUserWall(this.id)">
+                    </div>
+                    <div id="post-username-4" class="post-username" onclick="viewUserWall(this.id)">XXXXXXXX</div>
+                </div>
+            </div>
+
+            
+            <button id="see-more-button" class="see-more-button" onclick="seeMoreNewestDishes(this.id)">See more dishes...</button>
+        </div>
+
+        <!--Trending now-->
+        <div id="trending-now-div" class="trending-now-div">
+            <div id="trending-now-title-div" class="trending-now-title-div">
+                <h2 id="trending-now-title" class="trending-now-div"><u>Top 4 Trending Now</u></h2>
+            </div>
+
+            <div class="gallery-trending-now" id="gallery-trending-now-1">
+                <div id="like-trending-now-1" class="like-trending-now-div">X <i class="fa fa-heart" style="color:red;"></i>&nbsp&nbspX <img src="https://cdn.worldvectorlogo.com/logos/facebook-haha.svg" style="width:15px; height:12px;"></div>
+                <a id='view-post-trending-now-1' href="javascript:viewDetailPostTrendingNow('view-post-trending-now-1')"><img id="post-image-trending-now-1" src="https://previews.123rf.com/images/lkeskinen/lkeskinen1610/lkeskinen161000246/63375277-no-information-rubber-stamp-on-white-print-impress-overprint-.jpg" class="post-image-trending-now"></a>
+                <small id="recipe-name-trending-now-1" class="recipe-name-trending-now">XXXXXXXX</small>
+                <div class="postingUser-trending-now">
+                    <div id="post-avatar-icon-div-trending-now-1" class="post-avatar-icon-div-trending-now">
+                        <img src="" id="post-avatar-icon-trending-now-1" class="post-avatar-icon-trending-now" onclick="viewUserWall(this.id)">
+                    </div>
+                    <div id="post-username-trending-now-1" class="post-username-trending-now" onclick="viewUserWall(this.id)">XXXXXXXX</div>
+                </div>
+            </div>
+
+            <div class="gallery-trending-now" id="gallery-trending-now-2">
+                <div id="like-trending-now-2" class="like-trending-now-div">X <i class="fa fa-heart" style="color:red;"></i>&nbsp&nbspX <img src="https://cdn.worldvectorlogo.com/logos/facebook-haha.svg" style="width:15px; height:12px;"></div>
+                <a id='view-post-trending-now-2' href="javascript:viewDetailPostTrendingNow('view-post-trending-now-2')"><img id="post-image-trending-now-2" src="https://previews.123rf.com/images/lkeskinen/lkeskinen1610/lkeskinen161000246/63375277-no-information-rubber-stamp-on-white-print-impress-overprint-.jpg" class="post-image-trending-now"></a>
+                <small id="recipe-name-trending-now-2" class="recipe-name-trending-now">XXXXXXXX</small>
+                <div class="postingUser-trending-now">
+                    <div id="post-avatar-icon-div-trending-now-2" class="post-avatar-icon-div-trending-now">
+                        <img src="" id="post-avatar-icon-trending-now-2" class="post-avatar-icon-trending-now" onclick="viewUserWall(this.id)">
+                    </div>
+                    <div id="post-username-trending-now-2" class="post-username-trending-now" onclick="viewUserWall(this.id)">XXXXXXXX</div>
+                </div>
+            </div>
+
+            <div class="gallery-trending-now" id="gallery-trending-now-3">
+                <div id="like-trending-now-3" class="like-trending-now-div">X <i class="fa fa-heart" style="color:red;"></i>&nbsp&nbspX <img src="https://cdn.worldvectorlogo.com/logos/facebook-haha.svg" style="width:15px; height:12px;"></div>
+                <a id='view-post-trending-now-3' href="javascript:viewDetailPostTrendingNow('view-post-trending-now-3')"><img id="post-image-trending-now-3" src="https://previews.123rf.com/images/lkeskinen/lkeskinen1610/lkeskinen161000246/63375277-no-information-rubber-stamp-on-white-print-impress-overprint-.jpg" class="post-image-trending-now"></a>
+                <small id="recipe-name-trending-now-3" class="recipe-name-trending-now">XXXXXXXX</small>
+                <div class="postingUser-trending-now">
+                    <div id="post-avatar-icon-div-trending-now-3" class="post-avatar-icon-div-trending-now">
+                        <img src="" id="post-avatar-icon-trending-now-3" class="post-avatar-icon-trending-now" onclick="viewUserWall(this.id)">
+                    </div>
+                    <div id="post-username-trending-now-3" class="post-username-trending-now" onclick="viewUserWall(this.id)">XXXXXXXX</div>
+                </div>
+            </div>
+
+            <div class="gallery-trending-now" id="gallery-trending-now-4">
+                <div id="like-trending-now-4" class="like-trending-now-div">X <i class="fa fa-heart" style="color:red;"></i>&nbsp&nbspX <img src="https://cdn.worldvectorlogo.com/logos/facebook-haha.svg" style="width:15px; height:12px;"></div>
+                <a id='view-post-trending-now-4' href="javascript:viewDetailPostTrendingNow('view-post-trending-now-4')"><img id="post-image-trending-now-4" src="https://previews.123rf.com/images/lkeskinen/lkeskinen1610/lkeskinen161000246/63375277-no-information-rubber-stamp-on-white-print-impress-overprint-.jpg" class="post-image-trending-now"></a>
+                <small id="recipe-name-trending-now-4" class="recipe-name-trending-now">XXXXXXXX</small>
+                <div class="postingUser-trending-now">
+                    <div id="post-avatar-icon-div-trending-now-4" class="post-avatar-icon-div-trending-now">
+                        <img src="" id="post-avatar-icon-trending-now-4" class="post-avatar-icon-trending-now" onclick="viewUserWall(this.id)">
+                    </div>
+                    <div id="post-username-trending-now-4" class="post-username-trending-now" onclick="viewUserWall(this.id)">XXXXXXXX</div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <script>
+            username = sessionStorage.getItem("username");
+            avatar = sessionStorage.getItem("avatar");
+            cover = sessionStorage.getItem("cover");
+            anonymousAvatar = "data:image/png;base64," + sessionStorage.getItem("anonymousAvatar");
+            available = sessionStorage.getItem('available');
+
+            show_username = username;
+            if (username.length > 15) {
+                show_username = show_username.substring(0, 16) + "...";
+            }
+            document.getElementById("profile-name").innerHTML = show_username;
+            document.getElementById("show-username").innerHTML = show_username;
+
+            // Set anonymous avatar for newest dishes
+            for (var i = 0; i < 4; i++) {
+                var idAvatar = "post-avatar-icon-" + String(i + 1);
+                document.getElementById(idAvatar).src = anonymousAvatar;
+            }
+            //var img = document.createElement("img");
+            //img.src = "data:image/;base64," + avatar;
+            //console.log(img.src);
+            var avatar_string = "data:image/;base64," + avatar;
+            document.getElementById("avatar-img").src = avatar_string;
+            //var cover_string = "data:image/;base64," + cover;
+            //document.getElementById("cover-img").src = cover_string;
+    
+            readNewestPosts(4);
+            checkGuest();
+            if (username === "GUEST") {
+                document.getElementById("open-post-button").style.display = 'none';
+            }
+            readTrendingNowPosts();
+            
+            if (available === 'false') {
+                document.getElementById("suspended-div").style.display = 'block';
+                document.getElementById("title-div").style.display = 'none';
+                document.getElementById("newest-dishes-div").style.display = 'none';
+                document.getElementById("trending-now-div").style.display = 'none';
+                document.getElementById('my-recipes').style.display = 'none';
+                document.getElementById('edit-profile').style.display = 'none';
+                document.getElementById('change-password').style.display = 'none';
+                document.getElementById('my-favorite').style.display = 'none';
+            }
+        </script>
+
+    </body>
+</html>
