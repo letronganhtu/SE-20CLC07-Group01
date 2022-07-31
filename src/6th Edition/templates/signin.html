@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Sign In - Foodaholic</title>
+        <!--Add Google Fonts-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">
+
+        <!--Add title icon-->
+        <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/5141/5141534.png">
+    
+        <!--Add style files-->
+        <link rel="stylesheet" href="/Styles/signin.css">
+        <link rel="stylesheet" href="/Styles/navigation-bar.css">
+        <link rel="stylesheet" href="/Styles/loader.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!--Add Javascript file-->
+        <script type="text/javascript" src="/Scripts/functions.js"></script>
+    </head>
+
+    <body>
+        <script>
+            hidePreloader();
+        </script>
+        
+        <script>
+            // Function to format sign in data
+            function signInFormat(form_id) {
+                let uname = document.forms[form_id]["uname"].value;
+                let psw = document.forms[form_id]["psw"].value;
+                if (uname === "GUEST" || psw === "GUEST") {
+                    document.getElementById("alert-wrong-uname-psw").style.display = "block";
+                    return false;
+                }
+                if (uname === "" || psw === "") {
+                    return false;
+                }
+                let data = JSON.stringify(
+                    {"SignIn": "True", "uname": uname, "psw": psw}
+                );
+                return data;
+            }
+        </script>
+
+        <script>
+            function SendToAndGetDataFromServer() {
+                signInData = signInFormat('sign-in-form');
+                if (signInData === false) {
+                    setTimeout(function(){ 
+                        document.getElementById("alert-wrong-uname-psw").style.display = "none";
+                    }, 10000);
+                    return false;
+                }
+
+                /* Send data to server */
+                var req = new XMLHttpRequest();
+                req.open("POST", "/templates.signin.html", true);
+                req.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+                req.send(signInData);
+
+                /* Add event to wait until receiving data from server */
+                req.addEventListener('load', function(){
+                    received_data = JSON.parse(req.responseText);
+                    if (received_data.SignIn == true) {
+                        username = received_data.uname;
+                        avatar = received_data.avatar;
+                        cover = received_data.cover;
+                        accounttype = received_data.accounttype;
+                        available = received_data.available;
+                        sessionStorage.setItem("username", username);
+                        sessionStorage.setItem("avatar", avatar);
+                        sessionStorage.setItem("cover", cover);
+                        sessionStorage.setItem("accounttype", accounttype);
+                        sessionStorage.setItem("available", available);
+                        if (accounttype === "USER")
+                            OpenMainPage();
+                        else if (accounttype === "ADMIN")
+                            location.href = "/templates/admin-mainpage.html";
+                    }
+                    else {
+                        document.getElementById("alert-wrong-uname-psw").style.display = "block";
+                    }
+                });
+            }
+        </script>
+
+        <script>
+            function ContinueAsGuest(){
+                sessionStorage.setItem("username", "GUEST");
+                let data = JSON.stringify(
+                    {"ContinueAsGuest": "True", "uname": "GUEST", "psw": "GUEST"}
+                );
+
+                var req = new XMLHttpRequest();
+                req.open("POST", "/templates.signin.html", true);
+                req.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+                req.send(data);
+
+                req.addEventListener('load', function(){
+                    received_data = JSON.parse(req.responseText);
+                    if (received_data.ContinueAsGuest == true) {
+                        username = received_data.uname;
+                        avatar = received_data.avatar;
+                        cover = received_data.cover;
+                        sessionStorage.setItem("username", username);
+                        sessionStorage.setItem("avatar", avatar);
+                        sessionStorage.setItem("cover", cover);
+                        OpenMainPage();
+                    }
+                });
+            }
+        </script>
+
+
+        <ul class="navigation-bar">
+            <li><a class="fa fa-home" href="/templates/signin.html" style="font-size:23px"></a></li>
+            <li><a class="home-button" href="/templates/signin.html"> Home</a></li>
+            <div class="about-us-div">
+                <li><a class="about-us" href="#about">About Us</a></li>
+                <span class="about-us-text">Foodaholic is created by Group 1 including
+                    <ul>
+                        <li>Le Trong Anh Tu: 20127091</li>
+                        <li>Nguyen Thien Nhan: 20127265</li>
+                        <li>Le Dang Khoa: 20127533</li>
+                        <li>Phan Tuan Khai: 20127524</li>
+                    </ul>
+                </span>
+            </div>
+        </ul>
+
+        <!--Add loading effect-->
+        <div id="loader-wrapper" class="loader-wrapper">
+            <span class="loader">
+                <span class="loader-inner">
+                </span>
+            </span>
+            <div class="loading-text">
+                <h2 class="loading">Loading...</h2>
+            </div>
+        </div>
+
+        <div class="sign-in-form">
+            <h2 class="sign-in-title" style="text-align: center; width: 100%; margin-top: 5%">Sign In</h2>
+            <div id="alert-wrong-uname-psw" class="alert-wrong-uname-psw">Oops! Invalid username or password...</div>
+            <form name="sign-in-form" class="sign-in-form" onsubmit="return false;">
+                <div class="container">
+                    <label for="uname">Username</label><br>
+                    <input type="text" id="uname" name="uname" placeholder="Enter Username" required><br>
+                    <label for="psw">Password</label><br>
+                    <input type="password" id="psw" name="psw" placeholder="Enter Password" required><br>
+                    <span id="warning-caps-lock" style="color:red; display: none;">Warning: Caps Lock is on</span>
+                    
+                    <input type="submit" onclick="SendToAndGetDataFromServer()" class="sign-in-button" value="Sign in" id="sign-in-button"><br>
+                    
+                </div>
+                <div class="container">
+                    <a class="change-to-sign-up" href="javascript:OpenSignUpPage()">Sign Up</a>
+                    <a class="continue-as-guest" href="javascript:ContinueAsGuest()">Continue as Guest<br></a>
+                </div>
+                    
+            </form>
+        </div>
+
+        <script>
+            let input = document.getElementById('psw');
+            let text = document.getElementById("warning-caps-lock");
+            input.addEventListener("keyup", function(event) {
+                // If "caps lock" is pressed, display the warning text
+                if (event.getModifierState("CapsLock")) {
+                    text.style.display = "block";
+                } 
+                else {
+                    text.style.display = "none";
+                    }
+            });
+        </script>
+    </body>
+</html>
