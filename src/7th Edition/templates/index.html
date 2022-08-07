@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--Add website title-->
+        <title>Foodaholic</title>
+
+        <!--Add Google Fonts-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">
+        
+        <!--Add CSS files-->
+        <link rel="stylesheet" href="/Styles/index.css">
+
+        <!--Add title icon-->
+        <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/5141/5141534.png">
+    
+        <!--Internal CSS-->
+        <style>
+            body {
+                background-color: lightyellow;
+            }
+        </style>
+
+        <!--Add Javascript file-->
+        <script type="text/javascript" src="/Scripts/functions.js"></script>
+    </head>
+
+    <body>
+        <script>
+            hidePreloader();
+        </script>
+		
+        <div class="wrapper">
+            <div class="imgdiv"></div>
+            <div class="titlediv">
+                <h1>Welcome to Foodaholic</h1>
+            </div>
+            <div class="buttondiv">
+                <button id="enter-button" class="enter-button" onclick='OpenSignInPage()'><span>Discover Foodaholic</span></button>
+            </div>
+
+            <!--Add loading effect-->
+            <div id="loader-wrapper" class="loader-wrapper">
+                <span class="loader">
+                    <span class="loader-inner">
+                    </span>
+                </span>
+                <div class="loading-text">
+                    <h2 class="loading">Loading...</h2>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>

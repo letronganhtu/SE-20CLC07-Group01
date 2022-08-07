@@ -1,0 +1,165 @@
+body {
+    font-family: "Arial";
+}
+#back-to-homepage-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+div.in-page-profile {
+    width: 600px;
+    height: 220px;
+    border: 2px solid grey;
+    border-top: 1px solid grey;
+    border-left: 1px solid grey;
+    box-shadow: 2px 2px 0 rgb(0, 0, 0, 0.1);
+    margin-left: auto;
+    margin-right: auto;
+}
+div.avatar-div {
+    width: 90px;
+    height: 90px;
+    margin-top: 60px;
+    margin-left: 25px;
+    border-radius: 50%;
+}
+#in-page-avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+}
+div.fullname {
+    margin-left: 130px;
+    margin-top: -72px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+div.username {
+    margin-left: 130px;
+    margin-top: -12px;
+    font-size: 15px;
+    color: grey;
+}
+
+/* Add styles to my recipes title */
+div.my-recipes-title-div {
+    width: 800px;
+    height: 30px;
+    font-size: 18px;
+    text-align: center;
+    padding-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+}
+
+/* Add styles to hr bar */
+hr {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    border: 1px solid grey;
+}
+
+/* Add styles to no recipes div */
+#no-recipes-div {
+    width: 800px;
+    height: 200px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 40px;
+}
+#no-recipes-img, #no-recipes-title, #no-recipes-subtitle {
+    display: block;
+}
+#no-recipes-img {
+    margin-left: 340px;
+}
+#no-recipes-title {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+#no-recipes-subtitle {
+    margin-top: 10px;
+    color: grey;
+}
+
+/* Add styles to my recipes div */
+div.my-recipes-div {
+    width: 800px;
+    height: auto;
+    min-height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+div.recipe {
+    width: 100%;
+    height: 130px;
+    background-color: rgb(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    word-wrap: break-word;
+}
+div.recipe-name-div {
+    margin-left: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    word-wrap: break-word;
+    padding-top: 30px;
+}
+div.calories-div {
+    margin-left: 60px;
+    margin-top: 7px;
+    font-size: 17px;
+}
+button.delete-post-button {
+    margin-left: 20px;
+    color: red;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+button.delete-post-button:hover {
+    opacity: 0.6;
+}
+div.thumbnail-div {
+    width: 200px;
+    height: 130px;
+    margin-left: 620px;
+    margin-top: -85px;
+    border: none;
+}
+img.thumbnail {
+    width: 200px;
+    height: 130px;
+}
+#my-recipes-div a { 
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+}
+#my-recipes-div a:hover { 
+    border: 2px solid grey;
+    opacity: 0.6;
+}
+#open-post-button {
+    width: 180px;
+    height: 35px;
+    font-size: 15px;
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 5px 15px 5px 15px;
+}
+#open-post-button:hover {
+    background-color:rgb(0, 0, 0, 0.1);
+    border: 2px solid black;
+}

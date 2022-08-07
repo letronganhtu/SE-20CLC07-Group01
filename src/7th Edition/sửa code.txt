@@ -1,0 +1,11 @@
+"MH Sign in: 3 button Sign in, Create Account, Continue as Guest nên thẳng hàng (canh giữa); 2 button Sign in và Continue as Guest nên ở kế nhau; 2 button Create Account và Continue as Guest nên ít nổi bật hơn, vd chuyển thành link cho nhẹ nhàng hơn so với button;
+MH Sign up: ko nên hỏi quá nhiều thông tin, vd nên bỏ Username (dùng Email định danh là được rồi), bỏ Gender, bỏ Address, bỏ DOB (nếu phía sau ko dùng), gộp 2 cột name thành 1 cột Full name thôi; thống nhất chữ Create account và Sign up;
+MH Post recipe: font chữ Post recipe gây khó đọc; Preparation time, Cooking time: nên làm combo box cho chọn thôi; Các nút Add nên canh trái; MH này có nhiều thông tin quá, nên chia làm nhiều step dạng wizard thay vì bắt người dùng scroll; Bước chọn thumbnail gây cảm giác ko phải là 1 step trong Post recipe => cần chỉnh lại; Với lại: 1 món ăn nên post vài hình để người dùng dễ hình dung về món đó; 
+MH Home: Search: bỏ 2 checkbox, mặc định là search cả 2 tiêu chí, nếu muốn thì sau đó làm thêm chức năng Filter; Bỏ nút View, bấm vào hình là view rồi; In nghiêng màu xanh, in nghiêng màu đỏ: quá nhiều màu, chuyển lại 1 màu thôi. Nguyên tắc khi dùng màu: nên dùng <= 3 màu, nên dùng cùng 1 màu có các độ sáng tối khác nhau, thay vì dùng nhiều màu; Nút post something: sth là cái gì, là bài viết dạng blog hay là recipe, nên ghi rõ; Và nút này nên để trên menu cho đã choáng chỗ; 3 people love this => quá dài dòng, đổi lại 3 <icon trái tim> thôi; 
+MH View Recipe: Ingredient và Nutrion nên để chung; Nên thiết kế dạng tab thay vì phải scroll nhiều, vd tab thông tin chung, tab Steps, tab Comment; Phần Reaction nên để ở trên => mà trong app này làm sao like, làm sao react? 
+MH View my recipe: hình nên để bên trái; nên có một số button như edit, ẩn hiện món; Nên có button tạo recipe ở đây; 
+MH Report: làm sao để vào màn hình này; 
+MH Search: nên hiển thị khác với MH View my recipe; nên làm dạng grid vd 4 cột, n dòng; Phần filter nên trái nên có nút ẩn hiện để đỡ choáng chỗ; 
+Nếu có thời gian thì nên tập trung vào màn hình Comment, Rate"
+
+
