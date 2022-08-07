@@ -218,7 +218,6 @@ def postRecipe(data):
         additionalImage = binascii.hexlify(additionalImage).decode()
         additionalImage = '0x' + additionalImage.upper()
         query_command = "INSERT POST_IMAGES VALUES('{}', '{}', {})".format(id, i, additionalImage)
-        print(query_command)
         cursor.execute(query_command)
         conn.commit()
 
@@ -709,7 +708,7 @@ def readTrendingNowPosts(data):
         posts.append([postID, amount_of_like, '0', '0', '', '', '', ''])
     maxPosts = len(posts)
 
-    # GET SPECIFIC TYPES OF LIKE OF 4 POSTS--
+    # GET SPECIFIC TYPES OF LIKE OF 4 POSTS
     for i in range(maxPosts):
         query_command = "SELECT P.ID, LIKEP.TYPEOFLIKE, COUNT(*) AS AMOUNT FROM POST P, ACCOUNT ACC, LIKEPOST LIKEP WHERE P.POSTINGUSER = ACC.USERNAME AND P.AVAILABLE = 1 AND ACC.AVAILABLE = 1 AND P.ID = LIKEP.POSTID AND P.ID = '{}' GROUP BY P.ID, LIKEP.TYPEOFLIKE".format(posts[i][0])
         for row in cursor.execute(query_command):
@@ -722,7 +721,7 @@ def readTrendingNowPosts(data):
                 haha = row[2]
                 posts[i][3] = str(haha)
 
-    # GET ALL OTHER INFORMATION--
+    # GET ALL OTHER INFORMATION
     for i in range(maxPosts):
         query_command = "SELECT P.ID, P.POSTINGUSER, P.RECIPENAME, ACC.AVATAR, P.THUMBNAIL FROM POST P, ACCOUNT ACC WHERE P.POSTINGUSER = ACC.USERNAME AND P.AVAILABLE = 1 AND ACC.AVAILABLE = 1 AND P.ID = '{}'".format(posts[i][0])
         for row in cursor.execute(query_command):

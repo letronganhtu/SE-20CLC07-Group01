@@ -148,6 +148,7 @@ function uploadMultipleImages() {
             fileSizeArray.push(additional_images[i].size);
             totalFileSize += additional_images[i].size;
         }
+
         for (var i = 0; i < additional_images.length; i++) {
             var picture = new FileReader();
             picture.readAsDataURL(additional_images[i]);
@@ -155,8 +156,8 @@ function uploadMultipleImages() {
                 base64_string = event.target.result;
                 base64_string = String(base64_string).split(',');
                 base64_string = base64_string[1].trim();
-                additional_images_base64_string[i] = base64_string;
-                
+                additional_images_base64_string.push(base64_string);
+
                 // Get uploaded file size for progress bar
                 uploadedFileSize += fileSizeArray[count_image];
                 let percentage = uploadedFileSize * 100 / totalFileSize;
@@ -296,6 +297,8 @@ function post() {
         additional_nutrition_values[i] = document.getElementById(id).value;
     }
 
+    // Get additional images
+
 
     if (recipe_name === "Recipe Name" || recipe_name === "" || ingredients[0] === "" || countPreparationButtons === 0 || countCookingButtons === 0 || steps[0] === "" || calories === "" || checkCalories === false){
         alert("You haven't entered some required field(s)!");
@@ -312,6 +315,7 @@ function post() {
         alert("Fail to post recipe because this account has been suspended");
         location.href = '/templates/mainpage.html';
     }
+
     var data = {"PostRecipe": "True", "username": username, "recipe-name": recipe_name, "short-description": short_description, "ingredients": ingredients, "preparation-time": preparationTime, "cooking-time": cookingTime, "steps": steps, "calories": String(calories),"additional-nutrition-values": additional_nutrition_values, "additional-images": additional_images_base64_string, "thumbnail": thumbnail};
 
     data = JSON.stringify(data);

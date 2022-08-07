@@ -141,12 +141,10 @@ function readTrendingNowPosts() {
                 countTotalTrendingPosts+= 1;
             }
 
-            for (var i = maxTrendingPosts - 1; i < 4; i++) {
+            for (var i = maxTrendingPosts; i < 4; i++) {
                 let idThumbnail = "post-image-trending-now-" + String(i + 1);
-
-                    let galleryID = 'gallery-trending-now-' + String(i+1);
-                    document.getElementById(galleryID).style.display = 'none';
-
+                let galleryID = 'gallery-trending-now-' + String(i+1);
+                document.getElementById(galleryID).style.display = 'none';
             }
         }
     });
