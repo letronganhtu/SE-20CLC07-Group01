@@ -813,7 +813,7 @@ class Server(BaseHTTPRequestHandler):
             data = {"sign_up_successfully": does_sign_up_successfully, "username": username}
 
         elif not(post_data.get("ContinueAsGuest") is None):
-            check, uname, avatar, cover, accounttype = SignIn(post_data)
+            check, uname, avatar, cover, accounttype, available = SignIn(post_data)
             data = {"ContinueAsGuest": check, "uname": uname, "avatar": str(avatar), "cover": str(cover), "accounttype": accounttype}
 
         elif not(post_data.get("SignOut") is None):
